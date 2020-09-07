@@ -6,7 +6,7 @@ $(document).ready(_ => {
 
 
     const generateDientes = async (diente,enfermedad) => {
-
+ 
         let html = "";
         console.log(enfermedad);
         for (let i = 0; i < 32; i++) {
