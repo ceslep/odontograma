@@ -17,237 +17,367 @@
         integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
         crossorigin="anonymous"></script>
     <script src="js/jquery.ddslick.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/index.js"></script>
     <style>
         .dd-selected,
         .dd-option,
         .dd-option-selected {
-            height: 120px !important;
-            max-height: 120px !important;
+            height: 56px !important;
+            max-height: 56px !important;
         }
-        td{padding:0px!important;}
-        .select{ overflow: scroll;}
+
+        .dd-select {
+            width: auto;
+            border: 0px;
+        }
+
+        td {
+            padding: 0px !important;
+            margin: 0px !important;
+            border: 0px;
+        }
+
+        table,
+        tr {
+            width: initial;
+            min-width: 900px;
+            max-width: 960px;
+            border: 0px solid black;
+        }
     </style>
 </head>
 
 <body>
 
-    <div class="container-fluid">
+    <div class="container bg-white">
         <div class="row">
-            <div class="col-12 col-sm-12 col-lg-12">
-                <select name="" id="tipoEnfermedadDiente" class="custom-select form-control">
-                    <option value="caries">Caries</option>
-                    <option value="amalgama">Amalgama</option>
-                    <option value="resina">Resina</option>
+            <div class="col-12">
+                <select name="" id="tipoEnfermedadDiente" class="form-control w-100">
+                    <option value='abfraccionObturada'>Abfraccion Obturada</option>
+                    <option value='abfraccionParaObturar'>Abfraccion Para Obturar</option>
+                    <option value='amalgamaDesadaptadas'>Amalgama Desadaptadas</option>
+                    <option value='amalgamas'>Amalgamas</option>
+                    <option value='caries'>Caries</option>
+                    <option value='cementoTemporal'>Cemento Temporal</option>
+                    <option value='coronaAdaptada'>Corona Adaptada</option>
+                    <option value='coronaDesadactada'>Corona Desadactada</option>
+                    <option value='coronaTemoral'>Corona Temoral</option>
+                    <option value='desgasteIncisal'>Desgaste Incisal</option>
+                    <option value='dienteAusente'>Diente Ausente</option>
+                    <option value='dienteConEndodoncia'>Diente Con Endodoncia</option>
+                    <option value='dienteErupcionado'>Diente Erupcionado</option>
+                    <option value='dienteParaEndodoncia'>Diente Para Endodoncia</option>
+                    <option value='dienteParaExodoncia'>Diente Para Exodoncia</option>
+                    <option value='dienteSano'>Diente Sano</option>
+                    <option value='dienteSinerupcionar'>Diente Sin Erupcionar</option>
+                    <option value='fracturaDental'>Fractura Dental</option>
+                    <option value='movilidadDental'>Movilidad Dental</option>
+                    <option value='protesisFija'>Protesis Fija</option>
+                    <option value='protesisFijaAdaptada'>Protesisfija Adaptada</option>
+                    <option value='protesisRemovibleAdaptada'>Protesis Removible Adaptada</option>
+                    <option value='protesisRemovibleDesadaptada'>Protesis Removible Desadaptada</option>
+                    <option value='resinas'>Resinas</option>
+                    <option value='restoRadicular'>Resto Radicular</option>
+                    <option value='sellante'>Sellante</option>
+                    <option value='sellanteIndicado'>Sellante Indicado</option>
                 </select>
             </div>
         </div>
-    <table class="table p-0">
-        <tr>
-            <td  data-diente="18">
-                <div id="d18" class="select"></div>
-            </td>
-            <td  data-diente="17">
-                <div id="d17" class="select"></div>
-            </td>
-            <td data-diente="16">
-                <div id="d16" class="select" ></div>
-            </td>
-            <td data-diente="15">
-                <div id="d15" class="select" ></div>
-            </td>
-            <td data-diente="14">
-                <div id="d14" class="select"></div>
-            </td>
-            <td data-diente="13">
-                <div id="d13" class="select"></div>
-            </td>
-            <td data-diente="12">
-                <div id="d12" class="select"></div>
-            </td>
-            <td data-diente="11">
-                <div id="d11" class="select"></div>
-            </td>
-            <td data-diente="21">
-                <div id="d21" class="select"></div>
-            </td>
-            <td data-diente="22">
-                <div id="d22" class="select"></div>
-            </td>
-            <td data-diente="23">
-                <div id="d23" class="select"></div>
-            </td>
-            <td data-diente="24">
-                <div id="d24" class="select"></div>
-            </td>
-            <td data-diente="25">
-                <div id="d25" class="select"></div>
-            </td>
-            <td data-diente="26">
-                <div id="d26" class="select"></div>
-            </td>
-            <td data-diente="27">
-                <div id="d27" class="select"></div>
-            </td>
-            <td data-diente="28">
-                <div id="d28" class="select"></div>
-            </td>
-        </tr>
-        <tr>
-            <td>
+        <div class="row">
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="table table-borderless odontograma" id="odontograma">
+                        <tr>
+                            <td colspan="16" class="text-center text-info">
+                                <span>VESTIBULAR</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <div id="diente18" data-diente="18" class="select"></div>
+                                <span><a href="#!" class="borraDiente">18</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente17" data-diente="17" class="select"></div>
+                                <span><a href="#!" class="borraDiente">17</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente16" data-diente="16" class="select"></div>
+                                <span><a href="#!" class="borraDiente">16</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente15" data-diente="15" class="select"></div>
+                                <span><a href="#!" class="borraDiente">15</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente14" data-diente="14" class="select"></div>
+                                <span><a href="#!" class="borraDiente">14</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente13" data-diente="13" class="select"></div>
+                                <span<a href="#!" class="borraDiente">13</a><span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente12" data-diente="12" class="select"></div>
+                                <span><a href="#!" class="borraDiente">12</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente11" data-diente="11" class="select"></div>
+                                <span><a href="#!" class="borraDiente">11</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente21" data-diente="21" class="select"></div>
+                                <span><a href="#!" class="borraDiente">21</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente22" data-diente="22" class="select"></div>
+                                <span><a href="#!" class="borraDiente">22</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente23" data-diente="23" class="select"></div>
+                                <span><a href="#!" class="borraDiente">23</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente24" data-diente="24" class="select"></div>
+                                <span><a href="#!" class="borraDiente">24</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente25" data-diente="25" class="select"></div>
+                                <span><a href="#!" class="borraDiente">25</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente26" data-diente="26" class="select"></div>
+                                <span><a href="#!" class="borraDiente">26</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente27" data-diente="27" class="select"></div>
+                                <span><a href="#!" class="borraDiente">27</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente28" data-diente="28" class="select"></div>
+                                <span><a href="#!" class="borraDiente">28</a></span>
+                            </td>
+                        </tr>
 
-            <td>
-            </td>
+                        <tr>
+                            <td class="text-center">
 
-            <td>
-            </td>
+                            <td class="text-center">
+                            </td>
 
-            <td>
-            </td>
+                            <td class="text-center">
+                            </td>
 
-            <td data-diente="55">
-                <div id="d55" class="select"></div>
-            </td>
-            <td data-diente="54">
-                <div id="d54" class="select"></div>
-            </td>
-            <td data-diente="53">
-                <div id="d53" class="select"></div>
-            </td>
-            <td data-diente="52">
-                <div id="d52" class="select"></div>
-            </td>
-            <td data-diente="51">
-                <div id="d51" class="select"></div>
-            </td>
-            <td data-diente="61">
-                <div id="d61" class="select"></div>
-            </td>
-            <td data-diente="62">
-                <div id="d62" class="select"></div>
-            </td>
-            <td data-diente="63">
-                <div id="d63" class="select"></div>
-            </td>
-            <td data-diente="64">
-                <div id="d64" class="select"></div>
-            </td>
-            <td data-diente="65">
-                <div id="d65" class="select"></div>
-            </td>
-            <td>
-            </td>
+                            <td class="text-center">
 
-            <td>
-            </td>
+                                <div id="diente55" data-diente="55" class="select"></div>
+                                <span><a href="#!" class="borraDiente">55</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente54" data-diente="54" class="select"></div>
+                                <span><a href="#!" class="borraDiente">54</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente53" data-diente="53" class="select"></div>
+                                <span><a href="#!" class="borraDiente">53</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente52" data-diente="52" class="select"></div>
+                                <span><a href="#!" class="borraDiente">52</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente51" data-diente="51" class="select"></div>
+                                <span><a href="#!" class="borraDiente">51</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente61" data-diente="61" class="select"></div>
+                                <span><a href="#!" class="borraDiente">61</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente62" data-diente="62" class="select"></div>
+                                <span><a href="#!" class="borraDiente">62</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente63" data-diente="63" class="select"></div>
+                                <span><a href="#!" class="borraDiente">63</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente64" data-diente="64" class="select"></div>
+                                <span><a href="#!" class="borraDiente">64</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente65" data-diente="65" class="select"></div>
+                                <span><a href="#!" class="borraDiente">65</a></span>
+                            </td>
+                            <td class="text-center">
+                            </td>
 
-            <td>
-            </td>
-        </tr>
-        <tr>
-            <td>
+                            <td class="text-center">
+                            </td>
 
-            <td>
-            </td>
+                            <td class="text-center">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="text-center text-info">
+                                <span>DERECHO</span>
+                            </td>
+                            <td colspan="6" class="text-center text-info">
+                                <span>LINGUALES</span>
+                            </td>
+                            <td colspan="5" class="text-center text-info">
+                                <span>IZQUIERDO</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
 
-            <td>
-            </td>
 
-            <td>
-            </td>
+                            </td>
 
-            <td data-diente="85">
-                <div id="d85" class="select"></div>
-            </td>
-            <td data-diente="84">
-                <div id="d84" class="select"></div>
-            </td>
-            <td data-diente="83">
-                <div id="d83" class="select"></div>
-            </td>
-            <td data-diente="82">
-                <div id="d82" class="select"></div>
-            </td>
-            <td data-diente="81">
-                <div id="d81" class="select"></div>
-            </td>
-            <td data-diente="71">
-                <div id="d71" class="select"></div>
-            </td>
-            <td data-diente="72">
-                <div id="d72" class="select"></div>
-            </td>
-            <td data-diente="73">
-                <div id="d73" class="select"></div>
-            </td>
-            <td data-diente="74">
-                <div id="d74" class="select"></div>
-            </td>
-            <td data-diente="75">
-                <div id="d75" class="select"></div>
-            </td>
-            <td>
-            </td>
+                            <td class="text-center">
+                            </td>
 
-            <td>
-            </td>
+                            <td class="text-center">
+                            </td>
 
-            <td>
-            </td>
+                            <td class="text-center">
+                                <div id="diente85" data-diente="85" class="select"></div>
+                                <span><a href="#!" class="borraDiente">85</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente84" data-diente="84" class="select"></div>
+                                <span><a href="#!" class="borraDiente">84</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente83" data-diente="83" class="select"></div>
+                                <span><a href="#!" class="borraDiente">83</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente82" data-diente="82" class="select"></div>
+                                <span><a href="#!" class="borraDiente">82</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente81" data-diente="81" class="select"></div>
+                                <span><a href="#!" class="borraDiente">81</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente71" data-diente="71" class="select"></div>
+                                <span><a href="#!" class="borraDiente">71</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente72" data-diente="72" class="select"></div>
+                                <span><a href="#!" class="borraDiente">72</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente73" data-diente="73" class="select"></div>
+                                <span><a href="#!" class="borraDiente">73</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente74" data-diente="74" class="select"></div>
+                                <span><a href="#!" class="borraDiente">74</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente75" data-diente="75" class="select"></div>
+                                <span><a href="#!" class="borraDiente">75</a></span>
+                            </td>
+                            <td class="text-center">
+                            </td>
 
-        </tr>
-       <tr>
-            <td  data-diente="48">
-                <div id="d48" class="select"></div>
-            </td>
-            <td  data-diente="47">
-                <div id="d47" class="select"></div>
-            </td>
-            <td data-diente="46">
-                <div id="d46" class="select" ></div>
-            </td>
-            <td data-diente="45">
-                <div id="d45" class="select" ></div>
-            </td>
-            <td data-diente="44">
-                <div id="d44" class="select"></div>
-            </td>
-            <td data-diente="43">
-                <div id="d43" class="select"></div>
-            </td>
-            <td data-diente="42">
-                <div id="d42" class="select"></div>
-            </td>
-            <td data-diente="41">
-                <div id="d41" class="select"></div>
-            </td>
-            <td data-diente="31">
-                <div id="d21" class="select"></div>
-            </td>
-            <td data-diente="32">
-                <div id="d32" class="select"></div>
-            </td>
-            <td data-diente="33">
-                <div id="d33" class="select"></div>
-            </td>
-            <td data-diente="34">
-                <div id="d34" class="select"></div>
-            </td>
-            <td data-diente="35">
-                <div id="d35" class="select"></div>
-            </td>
-            <td data-diente="36">
-                <div id="d36" class="select"></div>
-            </td>
-            <td data-diente="37">
-                <div id="d37" class="select"></div>
-            </td>
-            <td data-diente="38">
-                <div id="d38" class="select"></div>
-            </td>
-        </tr>
-    </table>
-</div>
+                            <td class="text-center">
+                            </td>
+
+                            <td class="text-center">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <div id="diente48" data-diente="48" class="select"></div>
+                                <span><a href="#!" class="borraDiente">48</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente47" data-diente="47" class="select"></div>
+                                <span><a href="#!" class="borraDiente">47</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente46" data-diente="46" class="select"></div>
+                                <span><a href="#!" class="borraDiente">46</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente45" data-diente="45" class="select"></div>
+                                <span><a href="#!" class="borraDiente">45</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente44" data-diente="44" class="select"></div>
+                                <span><a href="#!" class="borraDiente">44</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente43" data-diente="43" class="select"></div>
+                                <span><a href="#!" class="borraDiente">43</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente42" data-diente="42" class="select"></div>
+                                <span><a href="#!" class="borraDiente">42</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente41" data-diente="41" class="select"></div>
+                                <span><a href="#!" class="borraDiente">41</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente31" data-diente="31" class="select"></div>
+                                <span><a href="#!" class="borraDiente">31</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente32" data-diente="32" class="select"></div>
+                                <span><a href="#!" class="borraDiente">32</a></span>
+                            </td>
+                            <td d>
+                                <div id="diente33" data-diente="33" class="select"></div>
+                                <span><a href="#!" class="borraDiente">33</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente34" data-diente="34" class="select"></div>
+                                <span><a href="#!" class="borraDiente">34</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente35" data-diente="35" class="select"></div>
+                                <span><a href="#!" class="borraDiente">35</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente36" data-diente="36" class="select"></div>
+                                <span><a href="#!" class="borraDiente">36</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente37" data-diente="37" class="select"></div>
+                                <span><a href="#!" class="borraDiente">37</a></span>
+                            </td>
+                            <td class="text-center">
+                                <div id="diente38" data-diente="38" class="select"></div>
+                                <span><a href="#!" class="borraDiente">38</a></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="16" class="text-center text-info">
+                                <span>VESTIBULAR</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <button class="btn btn-outline-primary btn-block btn-lg">Guardar</button>
+            </div>
+            <div class="col-12 col-sm-6">
+                <button class="btn btn-outline-success btn-block btn-lg">Cargar</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

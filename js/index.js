@@ -1,75 +1,198 @@
+'use strict';
 
+var dientesSeleccionados = [];
+var ddataArray = [];
+var indiceDiente;
+var indiceDiente;
 
-let dientesSeleccionados=[];
+$.fn.serializeObject = function () {
+	var o = {};
+	var a = this.serializeArray();
+	$.each(a, function () {
+		if (o[this.name]) {
+			if (!o[this.name].push) {
+				o[this.name] = [o[this.name]];
+			}
+			o[this.name].push(this.value || '');
+		} else {
+			o[this.name] = this.value || '';
+		}
+	});
+	return o;
+};
+
+class DienteSeleccionado{
+    enfermedad;
+    info;
+    diente;
+    constructor(enfermedad,info,diente){
+        this.enfermedad=enfermedad;
+        this.info=info;
+        this.diente=diente;
+    }
+    getInfoDiente(){
+        return{
+            enfermedad:this.enfermedad,
+            info:this.info,
+            diente:this.diente
+        }
+    }
+
+}
+
+class Ddata {
+    text;
+    value;
+    selected;
+    description;
+    imageSrc;
+    constructor(text, value, selected, description, imageSrc) {
+        this.text = text;
+        this.value = value;
+        this.selected = selected;
+        this.description = description;
+        this.imageSrc = imageSrc;
+    }
+
+    getDdataObj() {
+        return {
+            text: this.text,
+            value: this.value,
+            selected: this.selected,
+            description: this.description,
+            imageSrc: this.imageSrc
+        }
+    }
+};
 $(document).ready(_ => {
 
 
 
-    const generateDientes = async (diente,enfermedad) => {
- 
+    const generateDientes = async (diente, enfermedad) => {
+
         let html = "";
-        console.log(enfermedad);
-        for (let i = 0; i < 32; i++) {
-            html += ` <option value="${i}" data-imagesrc="dientesOdontograma/${enfermedad}/${i}.png"
-        data-description="${diente}">${diente}</option>`;
+        var imagenes=32;
+        ddataArray = [];
+        
+        
+        let s=enfermedad.substring(enfermedad.length-1,enfermedad.length);
+        imagenes=s=='s'?32:2;
+        
+        for (let i = 0; i < imagenes; i++) {
+          
+            let selected=false;
+            if (i==0) selected=true;
+            let ddata = new Ddata(diente, diente, selected, diente, `dientesOdontograma/${enfermedad}/${i}.png`);
+            ddataArray.push(ddata.getDdataObj());
 
         }
-        return html;
+      
+        return ddataArray;
+
     }
-    const selectDientes = enfermedad => {
+    const selectDientes = async enfermedad => {
 
-
-        
-
-        $("[id^=d]").each(async (i, k) => {
-            await $(k).ddslick('destroy');
-            $(k).empty();
+        console.log(enfermedad);
+        var ddataA=[];
+        await $("[id^=diente]").each(async (i, k) => {
+            
             let id = $(k).attr("id");
-            let diente = $(k).parent().data("diente");
-            let html = await generateDientes(diente,enfermedad);
-            console.log(html);
-            return false;
-            await $(k).empty().html(html).ddslick({
-                width: 90,
-                imagePosition: "left",
-                selectedText: diente,
-                onSelected: function (data) {
+            let diente = id.substring(6, 8);
+            indiceDiente = dientesSeleccionados.findIndex(Diente => Diente.diente==diente);
+            if (indiceDiente==-1){
+            $(k).ddslick('destroy');
+            let ddata=[];
+            ddata = await generateDientes(diente, enfermedad);
+            ddataA.push(ddata);
+            }
+        });   
 
-                 
-                 //   dientesSeleccionados.push(diente);
-                //    window.location.hash = `#${id}`;
-                 
-                }
+          await $("[id^=diente]").each(async (i, k) => {
+                let id = $(k).attr("id");
+                let diente = id.substring(6, 8);
+                indiceDiente = dientesSeleccionados.findIndex(Diente => Diente.diente==diente);
+                if (indiceDiente==-1){
+                await $(k).ddslick({
+                    data: ddataA[i],
+                    width: 65,
+                    onSelected: function (selectedData) {
+                     
+                        indiceDiente = dientesSeleccionados.findIndex(Diente => Diente.diente==diente);
+                        if (selectedData.selectedData.imageSrc.indexOf('0.png')<0){
+                         
+                            indiceDiente = dientesSeleccionados.findIndex(Diente => Diente.diente==selectedData.selectedData.text);
+                            console.log(id);
+                            console.log(indiceDiente); 
+                            let dienteSeleccionado = new DienteSeleccionado(enfermedad,selectedData.selectedData,diente);
+                            if (indiceDiente==-1)
+                            dientesSeleccionados.push(dienteSeleccionado)
+                            else
+                            dientesSeleccionados[indiceDiente]=dienteSeleccionado;
+                            console.log(JSON.stringify(dientesSeleccionados));
+                            
+                        }
 
+                    }
+                });
+            }
             });
-        });
+            
         
 
-    };
 
-    selectDientes("resina");
+        setTimeout(_ => {
+            $(".dd-select").css("background", "white");
+            $(".dd-select").css("color", "black");
+        }, 500);
 
 
-    setTimeout(_=>{
-        $(".dd-select").css("background", "white");
-        $(".dd-select").css("color", "black");
-    },1000);
 
-    
+    }
 
-    $(".dd-selected").each((i, k) => {
-        let parent = $(k).parent().parent().parent();
-        let diente = $(parent).data("diente");
+    $("#tipoEnfermedadDiente").change(e => {
+     
 
-        let span = `<span class="dnt">${diente}</span>`;
+        let enfermedad = $('#tipoEnfermedadDiente option:selected').val();
 
-        $(k).append(span);
-    });
 
-    $("#tipoEnfermedadDiente").change(e=>{
-        console.clear();
-        let enfermedad=$('#tipoEnfermedadDiente option:selected').val();
         selectDientes(enfermedad);
     });
+
+    $("#tipoEnfermedadDiente").change();
+
+
+
+   $(".borraDiente").click(e=>{
+       e.preventDefault();
+       let selDiente=$(e.currentTarget).parent().prev();
+       console.log(selDiente);
+       Swal.fire({
+        title: 'Está seguro de eliminar éste diente?',
+        text: "",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'No',
+        confirmButtonText: 'Si!'
+      }).then((result) => {
+     
+        $(selDiente).ddslick('select', {index: 0 });
+        let diente=$(e.currentTarget).text().trim();
+        console.log(diente);
+        dientesSeleccionados=dientesSeleccionados.filter(dienteSeleccionado=>{
+            return dienteSeleccionado.diente!=diente;
+        });
+        console.log(dientesSeleccionados);
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Borrado!',
+            'El diente ha sido Eliminado.',
+            'success'
+          )
+        }
+      })
+
+   });
 
 });
