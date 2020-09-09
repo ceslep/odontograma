@@ -92,7 +92,6 @@ $(document).ready(_ => {
     }
     const selectDientes = async enfermedad => {
 
-        console.log(enfermedad);
         var ddataA=[];
         await $("[id^=diente]").each(async (i, k) => {
             
@@ -121,8 +120,7 @@ $(document).ready(_ => {
                         if (selectedData.selectedData.imageSrc.indexOf('0.png')<0){
                          
                             indiceDiente = dientesSeleccionados.findIndex(Diente => Diente.diente==selectedData.selectedData.text);
-                            console.log(id);
-                            console.log(indiceDiente); 
+                            
                             let dienteSeleccionado = new DienteSeleccionado(enfermedad,selectedData.selectedData,diente);
                             if (indiceDiente==-1)
                             dientesSeleccionados.push(dienteSeleccionado)
@@ -165,8 +163,7 @@ $(document).ready(_ => {
    $(".borraDiente").click(e=>{
        e.preventDefault();
        let selDiente=$(e.currentTarget).parent().prev();
-       console.log(selDiente);
-       Swal.fire({
+        Swal.fire({
         title: 'Está seguro de eliminar éste diente?',
         text: "",
         icon: 'warning',
@@ -179,11 +176,9 @@ $(document).ready(_ => {
      
         $(selDiente).ddslick('select', {index: 0 });
         let diente=$(e.currentTarget).text().trim();
-        console.log(diente);
         dientesSeleccionados=dientesSeleccionados.filter(dienteSeleccionado=>{
             return dienteSeleccionado.diente!=diente;
         });
-        console.log(dientesSeleccionados);
         if (result.isConfirmed) {
           Swal.fire(
             'Borrado!',
