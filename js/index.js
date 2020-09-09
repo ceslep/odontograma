@@ -118,9 +118,7 @@ $(document).ready(_ => {
                      
                         indiceDiente = dientesSeleccionados.findIndex(Diente => Diente.diente==diente);
                         if (selectedData.selectedData.imageSrc.indexOf('0.png')<0){
-                         
                             indiceDiente = dientesSeleccionados.findIndex(Diente => Diente.diente==selectedData.selectedData.text);
-                            
                             let dienteSeleccionado = new DienteSeleccionado(enfermedad,selectedData.selectedData,diente);
                             if (indiceDiente==-1)
                             dientesSeleccionados.push(dienteSeleccionado)
@@ -135,16 +133,6 @@ $(document).ready(_ => {
             }
             });
             
-        
-
-
-        setTimeout(_ => {
-            $(".dd-select").css("background", "white");
-            $(".dd-select").css("color", "black");
-        }, 500);
-
-
-
     }
 
     $("#tipoEnfermedadDiente").change(e => {
