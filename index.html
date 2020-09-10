@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odontograma</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet"
         href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
         integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
@@ -23,8 +24,8 @@
         .dd-selected,
         .dd-option,
         .dd-option-selected {
-            height: 56px !important;
-            max-height: 56px !important;
+            height: 58px !important;
+            max-height: 58px !important;
         }
 
         .dd-select {
@@ -61,7 +62,7 @@
                     <option value='caries'>Caries</option>
                     <option value='cementoTemporal'>Cemento Temporal</option>
                     <option value='coronaAdaptada'>Corona Adaptada</option>
-                    <option value='coronaDesadactada'>Corona Desadactada</option>
+                    <option value='coronaDesadaptada'>Corona Desadactada</option>
                     <option value='coronaTemoral'>Corona Temoral</option>
                     <option value='desgasteIncisal'>Desgaste Incisal</option>
                     <option value='dienteAusente'>Diente Ausente</option>
@@ -116,7 +117,7 @@
                             </td>
                             <td class="text-center">
                                 <div id="diente13" data-diente="13" class="select"></div>
-                                <span<a href="#!" class="borraDiente">13</a><span>
+                                <span><a href="#!" class="borraDiente">13</a><span>
                             </td>
                             <td class="text-center">
                                 <div id="diente12" data-diente="12" class="select"></div>
@@ -371,10 +372,37 @@
 
         <div class="row">
             <div class="col-12 col-sm-6">
-                <button class="btn btn-outline-primary btn-block btn-lg">Guardar</button>
+                <button class="btn btn-outline-primary btn-block btn-lg" id="btnGuardarOdontograma">Guardar</button>
             </div>
             <div class="col-12 col-sm-6">
                 <button class="btn btn-outline-success btn-block btn-lg">Cargar</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="table table-stripped table-hover" id="enfermedades">
+                       <thead>
+                           <tr>
+                               <th>
+                                   Enfermedad
+                               </th>
+                               <th>
+                                   Diente
+                               </th>
+                               <th>
+                                   Info
+                               </th>
+                               <th>
+                                   Acción
+                               </th>    
+                           </tr>
+                       </thead>     
+                       <tbody id="tbde">
+
+                       </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

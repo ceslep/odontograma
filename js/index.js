@@ -4,22 +4,11 @@ var dientesSeleccionados = [];
 var ddataArray = [];
 var indiceDiente;
 var indiceDiente;
+var enfermedadDienteText;
 
-$.fn.serializeObject = function () {
-	var o = {};
-	var a = this.serializeArray();
-	$.each(a, function () {
-		if (o[this.name]) {
-			if (!o[this.name].push) {
-				o[this.name] = [o[this.name]];
-			}
-			o[this.name].push(this.value || '');
-		} else {
-			o[this.name] = this.value || '';
-		}
-	});
-	return o;
-};
+
+var server=location.href.indexOf("5500")>0?"http://127.0.0.1/adoweb/php/":"php/";
+
 
 class DienteSeleccionado{
     enfermedad;
@@ -124,7 +113,40 @@ $(document).ready(_ => {
                             dientesSeleccionados.push(dienteSeleccionado)
                             else
                             dientesSeleccionados[indiceDiente]=dienteSeleccionado;
-                            console.log(JSON.stringify(dientesSeleccionados));
+                            console.table(dientesSeleccionados);
+                            let html="";
+                            $("")
+                            dientesSeleccionados.forEach(dienteSeleccionado=>{
+                                    let enfermedadText;
+                                   $("#tipoEnfermedadDiente > option").each((i,k)=>{
+                                       if ($(k).val()==dienteSeleccionado.enfermedad){
+                                           enfermedadText=$(k).text();
+                                           return false;
+
+                                       }
+                                       
+                                   });
+                                   console.log(dienteSeleccionado);
+                                   html+=`
+                                    <tr>
+                                        <td class="text-center">
+                                            ${enfermedadText}
+                                        </td>
+                                        <td class="text-center">
+                                            ${dienteSeleccionado.diente}
+                                        </td>
+                                        <td class="text-center">
+                                        ${dienteSeleccionado.info.imageSrc}
+                                        </td>
+                                            
+                                        <td class="text-center">
+                                        <button type="button" class="btn btn-danger"><i class="fas fa-trash">&nbsp;</i></button>
+                                        </td
+                                    </tr>
+                                   `;
+                            });
+                            $("#tbde").empty().html(html);
+
                             
                         }
 
@@ -139,7 +161,7 @@ $(document).ready(_ => {
      
 
         let enfermedad = $('#tipoEnfermedadDiente option:selected').val();
-
+        enfermedadDienteText =$('#tipoEnfermedadDiente option:selected').text();
 
         selectDientes(enfermedad);
     });
@@ -176,6 +198,41 @@ $(document).ready(_ => {
         }
       })
 
+   });
+
+
+   const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    onOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+  
+
+   $("#btnGuardarOdontograma").click(async e=>{
+       e.preventDefault();
+       Toast.fire({
+        icon: 'success',
+        title: 'Guardando odontograma, espere por favor...',
+      })
+      
+       let response = await fetch(server+"guardaOdontograma.php",{
+           method:"POST",
+           body:JSON.stringify({enfermedades:dientesSeleccionados}),
+           headers:{"Content-Type":"application/json"},
+           mode:"cors"
+       });
+       let datosOdontograma = await response.json();
+       console.log(datosOdontograma);
+       Swal.close();
+       if (datosOdontograma.Estado=="Ok") Swal.fire(datosOdontograma.info)
+
+       
    });
 
 });

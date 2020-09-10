@@ -54,7 +54,8 @@
                 '.dd-option-selected { background:#ffffff; }' +
                 '.dd-option-image, .dd-selected-image { vertical-align:middle; float:left; margin-right:5px; max-width:44px;}' +
                 '.dd-image-right { float:right; margin-right:15px; margin-left:5px;}' +
-                '.dd-container{ position:relative;}​ .dd-selected-text { font-weight:bold}​</style>';
+                '.dd-container{ position:relative;}​ .dd-selected-text { font-weight:bold}​'+
+                '.dd-option-text{color:white;}</style>';
 
     //Public methods 
     methods.init = function (userOptions) {
