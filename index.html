@@ -19,6 +19,8 @@
         crossorigin="anonymous"></script>
     <script src="js/jquery.ddslick.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <script src="js/index.js"></script>
     <style>
         .dd-selected,
@@ -46,12 +48,13 @@
             max-width: 960px;
             border: 0px solid black;
         }
+        
     </style>
 </head>
 
 <body>
 
-    <div class="container bg-white">
+    <div class="container bg-white d-none" id="divOdontograma">
         <div class="row">
             <div class="col-12">
                 <select name="" id="tipoEnfermedadDiente" class="form-control w-100">
@@ -372,10 +375,15 @@
 
         <div class="row">
             <div class="col-12 col-sm-6">
-                <button class="btn btn-outline-primary btn-block btn-lg" id="btnGuardarOdontograma">Guardar</button>
+                <button class="btn btn-outline-primary btn-block btn-lg" id="btnGuardarOdontograma">
+                    <span class="d-none" id="dgear1"><img src="gear.gif" alt=""></span>
+                    Guardar</button>
             </div>
             <div class="col-12 col-sm-6">
-                <button class="btn btn-outline-success btn-block btn-lg">Cargar</button>
+                <button class="btn btn-outline-success btn-block btn-lg" id="btnCargarOdontograma">
+                    
+                    <span class="d-none" id="dgear2"><img src="gear.gif" alt=""></span>
+                    Cargar</button>
             </div>
         </div>
         <div class="row">
@@ -406,6 +414,111 @@
             </div>
         </div>
     </div>
+
+    <div class="container" id="divConsultaInicial">
+        <form action="">
+        <h3 class="text-secondary text-center">Información de Consulta Inicial</h4>
+        <h4 class="text-secondary text-center">Bienvenido a nuestra Clínica</h6>
+        <hr>
+        <p class="text-primary text-justify">En ortocentro será atendido por Ortodoncistas miembros de la Sociedad Colombiana de ortodoncia, en la consulta
+            de hoy se le realizará una evaluación para determinar si es necesario solicitar exámenes diagnósticos.
+
+        
+        </p>
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <div class="formGroup">
+                    <label for="ciudad">Ciudad</label>
+                    <select class="custom-select" id="ciudad" name="ciudad">
+                        <option selected>Seleccione...</option>
+                        <option value="Dos Quebradas">Dos Quebradas</option>
+                        <option value="Pereira">Pereira</option>
+                        
+                      </select>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6">
+                <div class="form-group">
+                    <label for="fecha">Fecha</label>
+                    <input type=date class="form-control" id="fecha" placeholder="name@example.com">
+                  </div>
+            </div>
+        </div>
+        <div class="row">
+            <h4 class="text-secondary col-1 col-lg-6">A. IDENTIFICACION</h4>
+        </div>
+        <div class="row">    
+            <div class="col-12 col-sm-6">
+                <div class="form-group">
+                    <label for="nombres">Nombres</label>
+                    <input type="text" class="form-control" id="nombres" name="nombres" >
+                  </div> 
+            </div>
+            <div class="col-12 col-sm-6 col-lg-6">
+                <div class="form-group">
+                    <label for="nombres">Apellidos</label>
+                    <input type="text" class="form-control" id="apellidos" name="apellidos" >
+                  </div> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-lg-12">
+            <div class="formGroup" >
+                <label for="pais">Nacionalidad/Pais</label>
+                <select class="custom-select" id="pais" name="pais">
+                            
+                    
+                  </select>
+            </div>    
+        </div>
+        <div class="col-12 col-sm-12 col-lg-12">
+
+            <div class="formGroup">
+                <label for="estado">Estado/Departamento</label>
+                <select class="custom-select" id="estado" name="estado">
+                            
+                    
+                  </select>
+            </div> 
+        </div>    
+        <div class="col-12 col-sm-12">
+
+            <div class="formGroup">
+                <label for="estado">Ciudad/Municipalidad</label>
+                <select class="custom-select" id="municipio" name="municipio">
+                            
+                    
+                  </select>
+            </div> 
+        </div>   
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-4">
+
+                <div class="formGroup">
+                    <label for="tdei">Tipo de Documento</label>
+                    <select class="custom-select" id="tdei" name="tdei">
+                         <option value=></option>
+                         <option value="CC">Cédula</option>
+                         <option value="TI">Tarjeta de Identidad</option>       
+                         <option value="RC">Registro Civil</option>
+                         <option value="PA">Pasaporte</option>
+                        
+                      </select>
+                </div> 
+            </div>
+            <div class="col-12 col-sm-4">
+
+                <div class="formGroup">
+                    <label for="identidicacion">Número</label>
+                    <input type="text" class="form-control" id="apellidos" name="apellidos" >
+                    
+                </div> 
+            </div>      
+        </div>
+    </form>
+    </div>
+
 </body>
 
 </html>
