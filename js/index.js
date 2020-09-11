@@ -344,12 +344,13 @@ $(document).ready(_ => {
         await estados.states.filter(estado=>{return estado.id_country==pais}).forEach(estado=>{
             html += `<option value="${estado.id}">${estado.name}</option>`;
         });
-        $("#estado").html(html).select2();
+        $(".depto").html(html).select2();
     });
 
-    $("#estado").change(async e => {
+    $(".depto").change(async e => {
         let estado = $("#estado option:selected").val();
-        console.log(estado);
+        let municipio=$(e.currentTarget).data("municipio");
+        console.log(municipio);
         let response = await fetch("json/cities.json", {
             mode: "no-cors",
             headers: {
@@ -364,7 +365,9 @@ $(document).ready(_ => {
         ciudades.forEach(ciudad=>{
             html += `<option value="${ciudad.id}">${ciudad.name}</option>`;
         });
-        $("#municipio").html(html).select2();
+        $(municipio).html(html).select2();
     });
+
+    $("select").select2();
 
 });

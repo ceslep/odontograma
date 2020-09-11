@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odontograma</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet"
         href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
         integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
@@ -20,7 +21,7 @@
     <script src="js/jquery.ddslick.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <script src="js/index.js"></script>
     <style>
         .dd-selected,
@@ -48,7 +49,10 @@
             max-width: 960px;
             border: 0px solid black;
         }
-        
+
+        label {
+            color: darkcyan;
+        }
     </style>
 </head>
 
@@ -381,7 +385,7 @@
             </div>
             <div class="col-12 col-sm-6">
                 <button class="btn btn-outline-success btn-block btn-lg" id="btnCargarOdontograma">
-                    
+
                     <span class="d-none" id="dgear2"><img src="gear.gif" alt=""></span>
                     Cargar</button>
             </div>
@@ -390,25 +394,25 @@
             <div class="col-12">
                 <div class="table-responsive">
                     <table class="table table-stripped table-hover" id="enfermedades">
-                       <thead>
-                           <tr>
-                               <th>
-                                   Enfermedad
-                               </th>
-                               <th>
-                                   Diente
-                               </th>
-                               <th>
-                                   Info
-                               </th>
-                               <th>
-                                   Acción
-                               </th>    
-                           </tr>
-                       </thead>     
-                       <tbody id="tbde">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Enfermedad
+                                </th>
+                                <th>
+                                    Diente
+                                </th>
+                                <th>
+                                    Info
+                                </th>
+                                <th>
+                                    Acción
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbde">
 
-                       </tbody>
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -417,107 +421,319 @@
 
     <div class="container" id="divConsultaInicial">
         <form action="">
-        <h3 class="text-secondary text-center">Información de Consulta Inicial</h4>
-        <h4 class="text-secondary text-center">Bienvenido a nuestra Clínica</h6>
-        <hr>
-        <p class="text-primary text-justify">En ortocentro será atendido por Ortodoncistas miembros de la Sociedad Colombiana de ortodoncia, en la consulta
-            de hoy se le realizará una evaluación para determinar si es necesario solicitar exámenes diagnósticos.
+            
+                    <div class="row">
+                        <div class="col-12 col-sm-4">
+                            <img src="assets/logo-ortocentro.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="col-12 col-sm-8">
+                            <h2 class="text-secondary text-center">Información de Consulta Inicial</h2>
+                            <h4 class="text-secondary text-center">Bienvenido a nuestra Clínica</h4>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="text-primary text-justify">En ortocentro será atendido por Ortodoncistas miembros
+                                de la
+                                Sociedad Colombiana de ortodoncia, en la consulta
+                                de hoy se le realizará una evaluación para determinar si es necesario solicitar exámenes
+                                diagnósticos.
 
-        
-        </p>
-        <div class="row">
-            <div class="col-12 col-sm-6">
-                <div class="formGroup">
-                    <label for="ciudad">Ciudad</label>
-                    <select class="custom-select" id="ciudad" name="ciudad">
-                        <option selected>Seleccione...</option>
-                        <option value="Dos Quebradas">Dos Quebradas</option>
-                        <option value="Pereira">Pereira</option>
+
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                                <label for="ciudad">Ciudad</label>
+                                <select class="custom-select" id="ciudad" name="ciudad">
+                                    <option selected>Seleccione...</option>
+                                    <option value="Dos Quebradas">Dos Quebradas</option>
+                                    <option value="Pereira">Pereira</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                                <label for="fecha">Fecha</label>
+                                <input type=date class="form-control" id="fecha" placeholder="name@example.com">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
                         
-                      </select>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h4 class="text-secondary text-center col-12 col-lg-6">A. Identificación del Paciente (Datos Personales)</h4>
+                            </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                                <label for="nombres">Nombres</label>
+                                <input type="text" class="form-control" id="nombres" name="nombres">
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="nombres">Apellidos</label>
+                                <input type="text" class="form-control" id="apellidos" name="apellidos">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-4 col-lg-4">
+                            <div class="form-group py-2">
+                                <label for="pais">Nacionalidad/País</label>
+                                <select class="custom-select" id="pais" name="pais">
+
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4 col-lg-4">
+                            <div class="form-group py-2">
+                                <label for="estado">Estado/Departamento</label>
+                                <select class="custom-select depto" id="estado" name="estado"
+                                    data-municipio="#municipio">
+
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4 col-lg-4">
+
+                            <div class="form-group py-2">
+                                <label for="estado">Ciudad/Municipalidad</label>
+                                <select class="custom-select" id="municipio" name="municipio">
+
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row py-2">
+                        <div class="col-12 col-sm-4">
+
+                            <div class="form-group py-2">
+                                <label for="tdei">Tipo de Documento</label>
+                                <select class="custom-select" id="tdei" name="tdei">
+                                    <option value=></option>
+                                    <option value="CC">Cédula</option>
+                                    <option value="TI">Tarjeta de Identidad</option>
+                                    <option value="RC">Registro Civil</option>
+                                    <option value="PA">Pasaporte</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4">
+
+                            <div class="form-group py-2">
+                                <label for="identificacion">Número</label>
+                                <input type="text" class="form-control" id="identificacion" name="identificacion"
+                                    type="text" pattern="[0-9]" inputmode="numeric">
+
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4">
+
+                            <div class="form-group py-2">
+                                <label for="identificacionDe">Expedido en</label>
+                                <input type="text" class="form-control" id="expedida" name="expedida" type="text"
+                                    pattern="[0-9]">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-4">
+
+                            <div class="form-group py-2">
+                                <label for="identificacionDe">Fecha de Nacimiento</label>
+                                <input type="date" class="form-control" id="fecnac" name="fecnac">
+
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4">
+
+                            <div class="form-group py-2">
+                                <label for="identidadGenero">Identidad de Género</label>
+                                <select class="custom-select" id="genero" name="genero">
+                                    <option selected>Seleccione...</option>
+                                    <option value="mujer">Mujer</option>
+                                    <option value="hombre">Hombre</option>
+
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4">
+                            <div class="form-group py-2">
+                                <label for="ocupacion">Ocupación</label>
+                                <input type="text" name="ocupacion" id="ocupacion" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group py-2">
+                                <label for="direccion">Dirección</label>
+                                <input type="text" name="direccion" id="direccion" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4">
+                            <div class="form-group py-2">
+                                <label for="estado">Estado/Departamento Residencia</label>
+                                <select class="custom-select depto" id="deptoresidencia"
+                                    data-municipio="#municipioresidencia" name="deptoresidencia">
+
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4">
+                            <div class="form-group py-2">
+                                <label for="estado">Municipio Residencia</label>
+                                <select class="custom-select depto" id="municipioresidencia" name="deptoresidencia">
+
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4">
+                            <div class="form-group py-2">
+                                <label for="estrato">Estrato</label>
+                                <input type="text" name="estrato" id="estrato" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-4">
+                            <div class="form-group py-2">
+                                <label for="telefono1">Teléfono 1</label>
+                                <input type="tel" name="telefono1" id="telefono1" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4">
+                            <div class="form-group py-2">
+                                <label for="telefono2">Teléfono 2</label>
+                                <input type="tel" name="telefono2" id="telefono2" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4">
+                            <div class="form-group py-2">
+                                <label for="telefono3">Teléfono 3</label>
+                                <input type="tel" name="telefono3" id="telefono3" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-lg-6">
+                            <div class="form-group py-2">
+                                <label for="estadoCivil">Estado Civil</label>
+                                <select name="estadoCivil" id="estadoCivil" class="custom-select">
+                                    <option value=""></option>
+                                    <option value="Soltero">Soltero</option>
+                                    <option value="Casado">Casado</option>
+                                    <option value="Union_Libre">Union de Hecho(libre)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-6">
+                            <div class="form-group py-2">
+                                <label for="estadoCivil">Nivel de Escolaridad</label>
+                                <select name="escolaridad" id="escolaridad" class="custom-select">
+                                    <option value=""></option>
+                                    <option value="ninguno">Ninguno</option>
+                                    <option value="primaria">Primaria</option>
+                                    <option value="bachilleratro">Bachillerato (Graduado)</option>
+                                    <option value="Técnico">Técnico Operador</option>
+                                    <option value="TecnólogoProfesional">Tecnólogo Profesional</option>
+                                    <option value="ProfesionalUniversitario">Profesional Universitario</option>
+                                    <option value="ProfesionalEspecializado">Profesional Especializado</option>
+                                    <option value="ProfesionalPosGraduado">Profesional Posgraduado</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group py-2">
+                                <label for="email">Correo electrónico</label>
+                                <input type="email" name="email" id="email" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    
+                            <div class="text-info row">
+                                <h4 class="text-secondary col-12 col-lg-6">B. ANAMNESIS</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form_group py-2">
+                                        <label for="motivoConsulta">Motivo de consulta</label>
+                                        <textarea name="motivoConsulta" id="" cols="30" rows="10" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-info row">
+                                <h4 class="text-secondary col-12 col-lg-6">C. ENFERMEDAD ACTUAL</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form_group py-2">
+                                        <label for="motivoConsulta">Signos y síntomas relacionados con el motivo de consulta</label>
+                                        <textarea name="motivoConsulta" id="motivoConsulta" cols="30" rows="10" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="text-info">
+                                    <h4 class="text-secondary col-12 ">D. ANTECEDENTES MEDICOS</h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" name="padeceEnfermedad" id="padeceEnfermedad">
+                                        <label class="form-check-label" for="defaultCheck2">
+                                          Padece de alguna enfermedad actualmente?
+                                        </label>
+                                      </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" name="recibeMedicamento" id="recibeMedicamento">
+                                        <label class="form-check-label" for="defaultCheck2">
+                                          Recibe algún medicamento?
+                                        </label>
+                                      </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" name="enfermedadesCardiacas" id="enfermedadesCardiacas">
+                                        <label class="form-check-label" for="defaultCheck2">
+                                          Enfermedades Cardiácas?
+                                        </label>
+                                      </div>
+                                </div>
+                            </div>
+                      
                 </div>
             </div>
-            <div class="col-12 col-sm-6">
-                <div class="form-group">
-                    <label for="fecha">Fecha</label>
-                    <input type=date class="form-control" id="fecha" placeholder="name@example.com">
-                  </div>
-            </div>
-        </div>
-        <div class="row">
-            <h4 class="text-secondary col-1 col-lg-6">A. IDENTIFICACION</h4>
-        </div>
-        <div class="row">    
-            <div class="col-12 col-sm-6">
-                <div class="form-group">
-                    <label for="nombres">Nombres</label>
-                    <input type="text" class="form-control" id="nombres" name="nombres" >
-                  </div> 
-            </div>
-            <div class="col-12 col-sm-6 col-lg-6">
-                <div class="form-group">
-                    <label for="nombres">Apellidos</label>
-                    <input type="text" class="form-control" id="apellidos" name="apellidos" >
-                  </div> 
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-sm-12 col-lg-12">
-            <div class="formGroup" >
-                <label for="pais">Nacionalidad/Pais</label>
-                <select class="custom-select" id="pais" name="pais">
-                            
-                    
-                  </select>
-            </div>    
-        </div>
-        <div class="col-12 col-sm-12 col-lg-12">
+           
+        </form>
 
-            <div class="formGroup">
-                <label for="estado">Estado/Departamento</label>
-                <select class="custom-select" id="estado" name="estado">
-                            
-                    
-                  </select>
-            </div> 
-        </div>    
-        <div class="col-12 col-sm-12">
-
-            <div class="formGroup">
-                <label for="estado">Ciudad/Municipalidad</label>
-                <select class="custom-select" id="municipio" name="municipio">
-                            
-                    
-                  </select>
-            </div> 
-        </div>   
-        </div>
-        <div class="row">
-            <div class="col-12 col-sm-4">
-
-                <div class="formGroup">
-                    <label for="tdei">Tipo de Documento</label>
-                    <select class="custom-select" id="tdei" name="tdei">
-                         <option value=></option>
-                         <option value="CC">Cédula</option>
-                         <option value="TI">Tarjeta de Identidad</option>       
-                         <option value="RC">Registro Civil</option>
-                         <option value="PA">Pasaporte</option>
-                        
-                      </select>
-                </div> 
-            </div>
-            <div class="col-12 col-sm-4">
-
-                <div class="formGroup">
-                    <label for="identidicacion">Número</label>
-                    <input type="text" class="form-control" id="apellidos" name="apellidos" >
-                    
-                </div> 
-            </div>      
-        </div>
-    </form>
     </div>
+
 
 </body>
 
