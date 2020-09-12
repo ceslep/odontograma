@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odontograma</title>
+    <title>Consulta Inicial</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
@@ -421,58 +421,58 @@
 
     <div class="container" id="divConsultaInicial">
         <form action="">
-            
-                    <div class="row">
-                        <div class="col-12 col-sm-4">
-                            <img src="assets/logo-ortocentro.png" class="img-fluid" alt="">
-                        </div>
-                        <div class="col-12 col-sm-8">
-                            <h2 class="text-secondary text-center">Información de Consulta Inicial</h2>
-                            <h4 class="text-secondary text-center">Bienvenido a nuestra Clínica</h4>
-                            <hr>
-                        </div>
+
+            <div class="row">
+                <div class="col-12 col-sm-4">
+                    <img src="assets/logo-ortocentro.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-12 col-sm-8">
+                    <h2 class="text-secondary text-center">Información de Consulta Inicial</h2>
+                    <h4 class="text-secondary text-center">Bienvenido a nuestra Clínica</h4>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p class="text-primary text-justify">En ortocentro será atendido por Ortodoncistas miembros
+                        de la
+                        Sociedad Colombiana de ortodoncia, en la consulta
+                        de hoy se le realizará una evaluación para determinar si es necesario solicitar exámenes
+                        diagnósticos.
+
+
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    <div class="form-group">
+                        <label for="ciudad">Ciudad</label>
+                        <select class="custom-select" id="ciudad" name="ciudad">
+                            <option selected>Seleccione...</option>
+                            <option value="Dos Quebradas">Dosquebradas</option>
+                            <option value="Pereira">Pereira</option>
+
+                        </select>
                     </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <p class="text-primary text-justify">En ortocentro será atendido por Ortodoncistas miembros
-                                de la
-                                Sociedad Colombiana de ortodoncia, en la consulta
-                                de hoy se le realizará una evaluación para determinar si es necesario solicitar exámenes
-                                diagnósticos.
-
-
-                            </p>
-                        </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <div class="form-group">
+                        <label for="fecha">Fecha</label>
+                        <input type=date class="form-control" id="fecha" placeholder="name@example.com">
                     </div>
+                </div>
+            </div>
+            <div class="row">
 
-
-                    <div class="row">
-                        <div class="col-12 col-sm-6">
-                            <div class="form-group">
-                                <label for="ciudad">Ciudad</label>
-                                <select class="custom-select" id="ciudad" name="ciudad">
-                                    <option selected>Seleccione...</option>
-                                    <option value="Dos Quebradas">Dos Quebradas</option>
-                                    <option value="Pereira">Pereira</option>
-
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6">
-                            <div class="form-group">
-                                <label for="fecha">Fecha</label>
-                                <input type=date class="form-control" id="fecha" placeholder="name@example.com">
-                            </div>
-                        </div>
+            </div>
+            <div class="card py-2 my-2">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h4 class="">A. Identificación del Paciente (Datos Personales)</h4>
                     </div>
-                    <div class="row">
-                        
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-title">
-                                <h4 class="text-secondary text-center col-12 col-lg-6">A. Identificación del Paciente (Datos Personales)</h4>
-                            </div>
                     <div class="row">
                         <div class="col-12 col-sm-6">
                             <div class="form-group">
@@ -490,7 +490,7 @@
                     <div class="row">
                         <div class="col-12 col-sm-4 col-lg-4">
                             <div class="form-group py-2">
-                                <label for="pais">Nacionalidad/País</label>
+                                <label for="pais">Pais</label>
                                 <select class="custom-select" id="pais" name="pais">
 
 
@@ -671,65 +671,427 @@
                                 <input type="email" name="email" id="email" class="form-control">
                             </div>
                         </div>
+                        <div class="col-12">
+                            <div class="card bg-light">
+                                <div class="card-title">
+                                    <span class="p-2 text-warning"> En caso de Emergencia un familiar que podamos
+                                        contactar</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-lg-6">
+                                            <div class="form-group">
+                                                <label for="nombresApellidosFamiliar">Nombres y Apellidos</label>
+                                                <input type="text" name="nombresApellidosFamiliar"
+                                                    id="nombresApellidosFamiliar" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6 col-lg-3">
+                                            <div class="form-group">
+                                                <label for="celularFamiliar">Celular</label>
+                                                <input type="tel" name="celularFamiliar" id="celularFamiliar"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6 col-lg-3">
+                                            <div class="form-group">
+                                                <label for="parentescoFamiliar">Parentesco</label>
+                                                <input type="tel" name="parentescoFamiliar" id="parentescoFamiliar"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    
-                            <div class="text-info row">
-                                <h4 class="text-secondary col-12 col-lg-6">B. ANAMNESIS</h4>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="form_group py-2">
-                                        <label for="motivoConsulta">Motivo de consulta</label>
-                                        <textarea name="motivoConsulta" id="" cols="30" rows="10" class="form-control"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-info row">
-                                <h4 class="text-secondary col-12 col-lg-6">C. ENFERMEDAD ACTUAL</h4>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="form_group py-2">
-                                        <label for="motivoConsulta">Signos y síntomas relacionados con el motivo de consulta</label>
-                                        <textarea name="motivoConsulta" id="motivoConsulta" cols="30" rows="10" class="form-control"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="text-info">
-                                    <h4 class="text-secondary col-12 ">D. ANTECEDENTES MEDICOS</h4>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" name="padeceEnfermedad" id="padeceEnfermedad">
-                                        <label class="form-check-label" for="defaultCheck2">
-                                          Padece de alguna enfermedad actualmente?
-                                        </label>
-                                      </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" name="recibeMedicamento" id="recibeMedicamento">
-                                        <label class="form-check-label" for="defaultCheck2">
-                                          Recibe algún medicamento?
-                                        </label>
-                                      </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" name="enfermedadesCardiacas" id="enfermedadesCardiacas">
-                                        <label class="form-check-label" for="defaultCheck2">
-                                          Enfermedades Cardiácas?
-                                        </label>
-                                      </div>
-                                </div>
-                            </div>
-                      
                 </div>
-            </div>
-           
+
+                <div class="card py-2 my-2">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h4 class="t">B. ANAMNESIS</h4>
+                        </div>
+                        <div class="row ">
+                            <div class="col-12">
+                                <div class="form_group py-2">
+                                    <label for="motivoConsulta">Motivo de consulta</label>
+                                    <textarea name="motivoConsulta" id="" cols="30" rows="2"
+                                        class="form-control"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card py-2 my-2">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h4>C. ENFERMEDAD ACTUAL</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form_group py-2">
+                                    <label for="motivoConsulta">Signos y síntomas relacionados con el motivo de
+                                        consulta</label>
+                                    <textarea name="motivoConsulta" id="motivoConsulta" cols="30" rows="2"
+                                        class="form-control"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card py-2 my-2">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h4>D. ANTECEDENTES MEDICOS</h4>
+                        </div>
+
+                        <div class="row  align-items-center">
+                            <div class="col-12 col-sm-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="padeceEnfermedad"
+                                        id="padeceEnfermedad">
+                                    <label class="form-check-label" for="padeceEnfermedad">
+                                        Padece de alguna enfermedad actualmente?
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group-inline">
+                                    <label for="cualEnfermedad">Cual?</label>
+                                    <input type="text" name="cualEnfermedad" id="cualEnfermedad" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row  align-items-center">
+                            <div class="col-12 col-sm-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="recibeMedicamento"
+                                        id="recibeMedicamento">
+                                    <label class="form-check-label" for="recibeMedicamento">
+                                        Recibe algún Medicamento?
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group-inline">
+                                    <label for="cualEnfermedad">Cual?</label>
+                                    <input type="text" name="cualMedicamento" id="cualMedicamento" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row  align-items-center">
+                            <div class="col-12 col-sm-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value=""
+                                        name="enfermedadesCardiacas" id="enfermedadesCardiacas">
+                                    <label class="form-check-label" for="enfermedadesCardiacas">
+                                        Enfermedades Cardíacas
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value=""
+                                        name="transtornosSanguineos" id="transtornosSanguineos">
+                                    <label class="form-check-label" for="transtornosSanguineos">
+                                        Transtornos Sanguíneos
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-12 col-sm-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="hipertensionArterial"
+                                        id="hipertensionArterial">
+                                    <label class="form-check-label" for="hipertensionArterial">
+                                        Hipertensión Arterial
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="fiebreReumatica"
+                                        id="fiebreReumatica">
+                                    <label class="form-check-label" for="fiebreReumatica">
+                                        Fiebre Reumática
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row  align-items-center">
+                            <div class="col-12 col-sm-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value=""
+                                        name="enfermedadesRespiratorias" id="enfermedadesRespiratorias">
+                                    <label class="form-check-label" for="enfermedadesRespiratorias">
+                                        Enfermedades Respiratorias
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="alergias"
+                                        id="alergias">
+                                    <label class="form-check-label" for="alergias">
+                                        Alergias
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row  align-items-center">
+                            <div class="col-12 col-sm-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="enfermedadesRenales"
+                                        id="enfermedadesRenales">
+                                    <label class="form-check-label" for="enfermedadesRenales">
+                                        Enfermedades Renales
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="obstruccionNasal"
+                                        id="obstruccionNasal">
+                                    <label class="form-check-label" for="obstruccionNasal">
+                                        Obstrucción Nasal
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row  align-items-center">
+                            <div class="col-12 col-sm-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="diabetes"
+                                        id="diabetes">
+                                    <label class="form-check-label" for="diabetes">
+                                        Diabetes
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="cirugias"
+                                        id="cirugias">
+                                    <label class="form-check-label" for="cirugias">
+                                        Cirugías
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row  align-items-center">
+                            <div class="col-12 col-sm-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="hepatitis"
+                                        id="hepatitis">
+                                    <label class="form-check-label" for="hepatitis">
+                                        Hepatitis
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="adenoides"
+                                        id="adenoides">
+                                    <label class="form-check-label" for="adenoides">
+                                        Adenoides
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row  align-items-center">
+                            <div class="col-12 col-sm-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="amigdalas"
+                                        id="amigdalas">
+                                    <label class="form-check-label" for="amigdalas">
+                                        Amígdalas
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+
+                            </div>
+                        </div>
+                        <div class="row  align-items-center">
+                            <div class="col-12 col-sm-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="otrasEnfermedades"
+                                        id="otrasEnfermedades">
+                                    <label class="form-check-label" for="otrasEnfermedades">
+                                        Otras Enfermedades
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group">
+                                    <label for="cualesEnfermedades">Cuales?</label>
+                                    <input type="text" name="cualesEnfermedades" id="cualesEnfermedades"
+                                        class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row  align-items-center">
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group">
+                                    <label for="edadMenstruacion">Edad de la primera Menstruación</label>
+                                    <input type="text" name="edadMenstruacion" id="edadmenstruacion"
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group">
+                                    <label for="cualesEnfermedades">Observaciones</label>
+                                    <input type="text" name="observacionesEnfermedades" id="ObservacionesEnfermedades"
+                                        class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card py-2 my-2">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h4>E. ANTECEDENTES FAMILIARES</h4>
+                            <span class="text-dark">
+                                Sí en su familia alguien ha padecido de algunas de las siguientes enfermedades,
+                                especifique
+                                quien.
+                            </span>
+                            <div class="row">
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                            name="enfermedadesCardiacasFamiliar" id="enfermedadesCardiacasFamiliar">
+                                        <label class="form-check-label" for="enfermedadesCardiacasFamiliar">
+                                            Enfermedades Cardíacas
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                            name="enfermedadesRespiratoriasFamiliar" id="enfermedadesCardiacasFamiliar">
+                                        <label class="form-check-label" for="enfermedadesRespiratoriasFamiliar">
+                                            Enfermedades Respiratorias
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                            name="hipertensionArterialFamiliar" id="hipertensionArterialFamiliar">
+                                        <label class="form-check-label" for="hipertensionArterialFamiliar">
+                                            Hipertensión Arterial
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                            name="diabetesMellitusFamiliar" id="diabetesMellitusFamiliar">
+                                        <label class="form-check-label" for="diabetesMellitusFamiliar">
+                                            Diabetes Mellitus
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" name=cancerFamiliar"
+                                            id="hipertensionArterialFamiliar">
+                                        <label class="form-check-label" for="cancerFamiliar">
+                                            Cancer
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" name="asmsFamiliar"
+                                            id="asmaFamiliar">
+                                        <label class="form-check-label" for="asmaFamiliar">
+                                            Asma
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form_group py-2">
+                                        <label for="observacionesFamiliar">Observaciones</label>
+                                        <textarea name="ObservacionesFamiliar" id="observacionesFamiliar" cols="30"
+                                            rows="2" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card py-2 my-2">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h4>F. EVALUACION ESTOMATOLOGICA</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-lg-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="asmsFamiliar"
+                                        id="asmaFamiliar">
+                                    <label class="form-check-label" for="asmaFamiliar">
+                                        Le han realizado algún procedimiento odontológico anteriormente?
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-lg-6">
+                                <div class="form-group">
+                                    <label for="cualProcedimientoOdontologico">Cual?</label>
+                                    <input type="text" name="cualProcedimientoOdontologico"
+                                        id="cualProcedimientoOdontologico" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="ultimaVisita">Ultima visita al odontólogo</label>
+                                    <input type="text" name="ultimaVisita" id="ultimaVisita" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="cepillaPorDia">Cuantas veces se cepilla por día</label>
+                                    <input type="text" name="cepillaPorDia" id="cepillaPorDia" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="cedaDental"
+                                        id="asmaFamiliar">
+                                    <label class="form-check-label" for="cedaDental">
+                                        Usa ceda dental?
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="enjuague"
+                                        id="enjuague">
+                                    <label class="form-check-label" for="enjuague">
+                                        Enjuague
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </form>
 
     </div>
