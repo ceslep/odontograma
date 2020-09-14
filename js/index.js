@@ -6,9 +6,18 @@ var indiceDiente;
 var indiceDiente;
 var enfermedadDienteText;
 
-
-
-var server = location.href.indexOf("5500") > 0 ? "http://192.168.2.25/adoweb/php/" : "php/";
+jQuery.fn.serializeObject = function () {
+    var formData = {};
+    var formArray = this.serializeArray();
+  
+    for(var i = 0, n = formArray.length; i < n; ++i)
+      formData[formArray[i].name] = formArray[i].value;
+  
+    return formData;
+  };
+  
+  
+var server = location.href.indexOf("5500") > 0 ? "http://127.0.0.1/adoweb/php/" : "php/";
 
 
 class DienteSeleccionado {
@@ -369,5 +378,18 @@ $(document).ready(_ => {
     });
 
     $("select").select2();
+
+    $("#guardaConsultaInicial").click(e=>{
+        e.preventDefault();
+        let obj=$("#frmConsultaInicial").serializeObject();
+        console.log(obj);
+        let output="create table consultaInicial ("
+        output+="`ind` bigint(20) ,"
+        Object.keys(obj).forEach(key=>{
+            output+=`${key} varchar(125) default NULL, `;
+        });
+        output+=")";
+        console.log(output);
+    })
 
 });

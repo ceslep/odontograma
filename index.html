@@ -11,6 +11,7 @@
     <link rel="stylesheet"
         href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
         integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <link rel="stylesheet" href="gradients.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
         integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
@@ -396,16 +397,16 @@
                     <table class="table table-stripped table-hover" id="enfermedades">
                         <thead>
                             <tr>
-                                <th>
+                                <th class="text-center text-primary">
                                     Enfermedad
                                 </th>
-                                <th>
+                                <th class="text-center text-primary">
                                     Diente
                                 </th>
-                                <th>
+                                <th class="text-center text-primary">
                                     Info
                                 </th>
-                                <th>
+                                <th class="text-center text-primary">
                                     Acción
                                 </th>
                             </tr>
@@ -420,7 +421,7 @@
     </div>
 
     <div class="container" id="divConsultaInicial">
-        <form action="">
+        <form id="frmConsultaInicial">
 
             <div class="row">
                 <div class="col-12 col-sm-4">
@@ -461,7 +462,7 @@
                 <div class="col-12 col-sm-6">
                     <div class="form-group">
                         <label for="fecha">Fecha</label>
-                        <input type=date class="form-control" id="fecha" placeholder="name@example.com">
+                        <input type=date class="form-control" name="fecha" id="fecha" placeholder="name@example.com">
                     </div>
                 </div>
             </div>
@@ -974,7 +975,8 @@
                                 <div class="col-12 col-sm-6">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value=""
-                                            name="enfermedadesRespiratoriasFamiliar" id="enfermedadesCardiacasFamiliar">
+                                            name="enfermedadesRespiratoriasFamiliar"
+                                            id="enfermedadesRespiratoriasFamiliar">
                                         <label class="form-check-label" for="enfermedadesRespiratoriasFamiliar">
                                             Enfermedades Respiratorias
                                         </label>
@@ -1005,7 +1007,7 @@
                                 <div class="col-12 col-sm-6">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" name=cancerFamiliar"
-                                            id="hipertensionArterialFamiliar">
+                                            id="cancerFamiliar">
                                         <label class="form-check-label" for="cancerFamiliar">
                                             Cancer
                                         </label>
@@ -1013,7 +1015,7 @@
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" name="asmsFamiliar"
+                                        <input class="form-check-input" type="checkbox" value="" name="asmaFamiliar"
                                             id="asmaFamiliar">
                                         <label class="form-check-label" for="asmaFamiliar">
                                             Asma
@@ -1041,9 +1043,9 @@
                         <div class="row">
                             <div class="col-12 col-sm-12 col-lg-6">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" name="asmsFamiliar"
-                                        id="asmaFamiliar">
-                                    <label class="form-check-label" for="asmaFamiliar">
+                                    <input class="form-check-input" type="checkbox" value=""
+                                        name="procedimientoOdontologico" id="procedimientoOdontologico">
+                                    <label class="form-check-label" for="procedimientoOdontologico">
                                         Le han realizado algún procedimiento odontológico anteriormente?
                                     </label>
                                 </div>
@@ -1074,7 +1076,7 @@
                             <div class="col-6">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="" name="cedaDental"
-                                        id="asmaFamiliar">
+                                        id="cedaDental">
                                     <label class="form-check-label" for="cedaDental">
                                         Usa ceda dental?
                                     </label>
@@ -1096,7 +1098,7 @@
                                     <input class="form-check-input" type="checkbox" value="" name="tomaTetero"
                                         id="tomaTetero">
                                     <label class="form-check-label" for="tomaTetero">
-                                       Toma tetero?
+                                        Toma tetero?
                                     </label>
                                 </div>
                             </div>
@@ -1110,8 +1112,779 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="morderseLosLabios"
+                                        id="morderseLosLabios">
+                                    <label class="form-check-label" for="morderseLosLabios">
+                                        Morderse Los Labios?
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="morderseLasUnas"
+                                        id="morderseLasUnas">
+                                    <label class="form-check-label" for="morderseLasUnas">
+                                        Morderse las Uñas?
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="respirarPorLaBoca"
+                                        id="respirarPorLaBoca">
+                                    <label class="form-check-label" for="respirarPorLaBoca">
+                                        Respirar por la boca?
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                </div>
+                    <div class="card p-4 m-4">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h4>F.1. TEJIDOS BLANDOS</h4>
+                                Deseleccione la Opción para indicar anormalidad
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="true" checked
+                                            name="labios" id="labios">
+                                        <label class="form-check-label" for="labios">
+                                            Labios
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="true" checked
+                                            name="frenillos" id="frenillos">
+                                        <label class="form-check-label" for="frenillos">
+                                            Frenillos
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="true" checked
+                                            name="lengua" id="lengua">
+                                        <label class="form-check-label" for="lengua">
+                                            Lengua
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="true" checked
+                                            name="maxilares" id="maxilares">
+                                        <label class="form-check-label" for="frenillos">
+                                            Maxilares
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="true" checked
+                                            name="paladar" id="paladar">
+                                        <label class="form-check-label" for="paladar">
+                                            Paladar
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="true" checked
+                                            name="funcionDeOclusion" id="funcionDeOclusion">
+                                        <label class="form-check-label" for="funcionDeOclusion">
+                                            Función De Oclusion
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="true" checked
+                                            name="carrillos" id="carrillos">
+                                        <label class="form-check-label" for="carrillos">
+                                            Carrillos
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="true" checked name="atm"
+                                            id="atm">
+                                        <label class="form-check-label" for="atm">
+                                            ATM
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="true" checked
+                                            name="pisoDeBoca" id="pisoDeBoca">
+                                        <label class="form-check-label" for="pisoDeBoca">
+                                            Piso de Boca
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <input class="form-control" type="number" value="" name="aperturaMaxima"
+                                            id="aperturaMaxima">
+                                        <label class="form-check-label" for="aperturaMaxima">
+                                            Apertura Máxima (mm)
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="observacionesTejidosBlandos"
+                                            id="observacionesTejidosBlandos">
+                                        <label class="form-check-label" for="observacionesTejidosBlandos">
+                                            Observaciones
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card p-4 m-4">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h4>F.2. TEJIDOS PERIODONTALES</h4>
+                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="inflamacion" id="inflamacion">
+                                    <label class="form-check-label" for="inflamacion">
+                                        Inflamación
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="recesiones" id="recesiones">
+                                    <label class="form-check-label" for="recesiones">
+                                        Recesiones
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="sangrado" id="sangrado">
+                                    <label class="form-check-label" for="sangrado">
+                                        Sangrado
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="placaBlanda" id="placaBlanda">
+                                    <label class="form-check-label" for="placaBlanda">
+                                        Placa Blanda
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="movilidad" id="movilidad">
+                                    <label class="form-check-label" for="movilidad">
+                                        Movilidad
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="placaCalcificada" id="placaCalcificada">
+                                    <label class="form-check-label" for="placaCalcificada">
+                                        Placa Calcificada
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" value="" name="" id="defectoOseoVertical">
+                                    <label class="form-check-label" for="defectoOseoVertical">
+                                        Defecto Oseo Vertical
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" value="" name="compromisoDeFurca" id="compromisoDeFurca">
+                                    <label class="form-check-label" for="compromisoDeFurca">
+                                        Compromiso de Furca
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="otrosPeriodontales">Otros</label>
+                                    <input type="text" name="otrosPeriodontales" id="otrosPeriodontales" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="container-fluid">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                        <thead class="text-primary">
+                                            <tr>
+                                                <th>
+
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    18
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    17
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    16
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    15
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    14
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    13
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    12
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    11
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                   21
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    22
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    23
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    24
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    25
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    26
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    27
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    28
+                                                </th>
+                                                <th>
+
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center">
+                                                    V
+                                                </td>    
+                                                <td class="text-center">
+                                                   <div contenteditable>
+
+                                                   </div>     
+                                                </td>
+                                                <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                     V
+                                                 </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    P
+                                                </td>    
+                                                <td class="text-center">
+                                                   <div contenteditable>
+
+                                                   </div>     
+                                                </td>
+                                                <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                     P
+                                                 </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="container-fluid">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                        <tfoot>
+                                            <tr>
+                                                <th>
+
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    48
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    47
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    46
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    45
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    44
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    43
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    42
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    41
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                   31
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    32
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    33
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    34
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    35
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    36
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    37
+                                                </th>
+                                                <th class="text-center text-primary">
+                                                    38
+                                                </th>
+                                                <th>
+                                                </th>    
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center">
+                                                    L
+                                                </td>    
+                                                <td class="text-center">
+                                                   <div contenteditable>
+
+                                                   </div>     
+                                                </td>
+                                                <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                     L
+                                                 </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    V
+                                                </td>    
+                                                <td class="text-center">
+                                                   <div contenteditable>
+
+                                                   </div>     
+                                                </td>
+                                                <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    <div contenteditable>
+ 
+                                                    </div>     
+                                                 </td>
+                                                 <td class="text-center">
+                                                    V
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card m-4 p-4">
+                        <div class="card-body">
+                            <div class="card-title">
+                               <h4>F.3. TEJIDOS PULPARES</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" name="patologiaPulpar" id="patologiaPulpar">
+                                        <label class="form-check-label" for="patologiaPulpar">
+                                            Patología Pulpar
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" name="abscesos" id="abscesos">
+                                        <label class="form-check-label" for="abscesos">
+                                            Abscesos
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        
+                                        <input type="text" name="observacionesTejidosPeriodontales" id="observacionesTejidosPeriodontales" class="form-control">
+                                        <label for="observacionesTejidosPeriodontales">Observaciones</label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button class="btn btn-outline-success btn-block w-50 mx-auto" id="guardaConsultaInicial">Guardar Consulta Inicial</button>
+                        </div>
+                    </div>   
         </form>
 
     </div>
