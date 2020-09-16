@@ -58,40 +58,52 @@
         label {
             color: darkcyan;
         }
+
+        #select2-selection__rendered{
+            width: 100% !important;
+        }
+
+        .text-black{
+            color:black;
+        }
     </style>
 </head>
 
 
 <body>
     <div class="container-fluid">
-        <nav class="">
-            <div class="nav nav-tabs bg-primary nav-fill" id="nav-tab" role="tablist">
-                <a class="nav-item nav-link active" id="nav-identificacion-tab" data-toggle="tab"
-                    href="#nav-identificacion" role="tab" aria-controls="nav-identificacion"
-                    aria-selected="true"><span class="small">Identificación</span></a>
-                <a class="nav-item nav-link" id="nav-anamnesis-tab" data-toggle="tab" href="#nav-anamnesis" role="tab"
-                    aria-controls="nav-anamnesis" aria-selected="false"><span class="small">ANAMNESIS</span></a>
-                <a class="nav-item nav-link" id="nav-enfermedad-tab" data-toggle="tab" href="#nav-enfermedad" role="tab"
-                    aria-controls="nav-enfermedad" aria-selected="false"><span class="small">ENFERMEDAD</span></a>
-                <a class="nav-item nav-link" id="nav-antecedentes-tab" data-toggle="tab" href="#nav-antecedentes"
-                    role="tab" aria-controls="nav-antecedentes" aria-selected="false"><span class="small">ANTECEDENTES</span></a>
-                <a class="nav-item nav-link" id="nav-familiares-tab" data-toggle="tab" href="#nav-familiares" role="tab"
-                    aria-controls="nav-familiares" aria-selected="false"><span class="small">ANTECEDENTES FAMILIARES</span></a>
-                <a class="nav-item nav-link" id="nav-estomatologica-tab" data-toggle="tab" href="#nav-estomatologica"
-                    role="tab" aria-controls="nav-estomatologica" aria-selected="false"><span class="small">EVALUACION ESTOMATOLOGICA</span></a>
-                <a class="nav-item nav-link" id="nav-examenes-tab" data-toggle="tab" href="#nav-examenes" role="tab"
-                    aria-controls="nav-examenes" aria-selected="false"><span class="small">Ayudas Dx - Comp.</span></a>
-                <a class="nav-item nav-link" id="nav-diagnostico-tab" data-toggle="tab" href="#nav-diagnostico"
-                    role="tab" aria-controls="nav-diagnostico" aria-selected="false"><span class="small">Diagnóstico</span></a>
-                <a class="nav-item nav-link" id="nav-pronostico-tab" data-toggle="tab" href="#nav-pronostico" role="tab"
-                    aria-controls="nav-pronostico" aria-selected="false"><span class="small">PRONOSTICO</span></a>
-                <a class="nav-item nav-link" id="nav-planTto-tab" data-toggle="tab" href="#nav-planTto" role="tab"
-                    aria-controls="nav-planTto" aria-selected="false"><span class="small">PLAN DE TRATAMIENTO</span></a>
-            </div>
-        </nav>
+
+        <ul class="nav nav-tabs bg-primary nav-fill" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link" id="nav-identificacion-tab" data-toggle="tab" href="#nav-identificacion"
+                role="tab" aria-controls="nav-identificacion" aria-selected="true"><span
+                    class="small">Identificación</span></a>
+            <a class="nav-item nav-link" id="nav-anamnesis-tab" data-toggle="tab" href="#nav-anamnesis" role="tab"
+                aria-controls="nav-anamnesis" aria-selected="false"><span class="small">ANAMNESIS</span></a>
+            <a class="nav-item nav-link" id="nav-enfermedad-tab" data-toggle="tab" href="#nav-enfermedad" role="tab"
+                aria-controls="nav-enfermedad" aria-selected="false"><span class="small">ENFERMEDAD</span></a>
+            <a class="nav-item nav-link" id="nav-antecedentes-tab" data-toggle="tab" href="#nav-antecedentes" role="tab"
+                aria-controls="nav-antecedentes" aria-selected="false"><span class="small">ANTECEDENTES</span></a>
+            <a class="nav-item nav-link" id="nav-familiares-tab" data-toggle="tab" href="#nav-familiares" role="tab"
+                aria-controls="nav-familiares" aria-selected="false"><span class="small">ANTECEDENTES
+                    FAMILIARES</span></a>
+            <a class="nav-item nav-link" id="nav-estomatologica-tab" data-toggle="tab" href="#nav-estomatologica"
+                role="tab" aria-controls="nav-estomatologica" aria-selected="false"><span class="small">EVALUACION
+                    ESTOMATOLOGICA</span></a>
+            <a class="nav-item nav-link" id="nav-examenes-tab" data-toggle="tab" href="#nav-examenes" role="tab"
+                aria-controls="nav-examenes" aria-selected="false"><span class="small">Ayudas Dx - Comp.</span></a>
+            <a class="nav-item nav-link" id="nav-diagnostico-tab" data-toggle="tab" href="#nav-diagnostico" role="tab"
+                aria-controls="nav-diagnostico" aria-selected="false"><span class="small">Diagnóstico</span></a>
+            <a class="nav-item nav-link" id="nav-pronostico-tab" data-toggle="tab" href="#nav-pronostico" role="tab"
+                aria-controls="nav-pronostico" aria-selected="false"><span class="small">PRONOSTICO</span></a>
+            <a class="nav-item nav-link" id="nav-planTto-tab" data-toggle="tab" href="#nav-planTto" role="tab"
+                aria-controls="nav-planTto" aria-selected="false"><span class="small">PLAN DE TRATAMIENTO</span></a>
+                <a class="nav-item nav-link" id="nav-dxplanTto-tab" data-toggle="tab" href="#nav-dxplanTto" role="tab"
+                aria-controls="nav-dxplanTto" aria-selected="false"><span class="small">DX Y PLAN TTO</span></a>
+        </ul>
+
     </div>
     <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="nav-identificacion" role="tabpanel"
+        <div class="tab-pane fade show" id="nav-identificacion" role="tabpanel"
             aria-labelledby="nav-identificacion-tab">
             <div class="card py-2 my-2">
                 <div class="card-body">
@@ -113,10 +125,10 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-sm-4 col-lg-4">
+                        <div class="col-12 col-sm-4">
                             <div class="form-group py-2">
                                 <label for="pais">Pais</label>
-                                <select class="custom-select" id="pais" name="pais">
+                                <select class="form-control" id="pais" name="pais" style="width: 100%">
 
 
                                 </select>
@@ -126,7 +138,7 @@
                             <div class="form-group py-2">
                                 <label for="estado">Estado/Departamento</label>
                                 <select class="custom-select depto" id="estado" name="estado"
-                                    data-municipio="#municipio">
+                                    data-municipio="#municipio" style="width:100%;">
 
 
                                 </select>
@@ -136,7 +148,7 @@
 
                             <div class="form-group py-2">
                                 <label for="estado">Ciudad/Municipalidad</label>
-                                <select class="custom-select" id="municipio" name="municipio">
+                                <select class="custom-select" id="municipio" name="municipio" style="width:100%;">
 
 
                                 </select>
@@ -148,7 +160,7 @@
 
                             <div class="form-group py-2">
                                 <label for="tdei">Tipo de Documento</label>
-                                <select class="custom-select" id="tdei" name="tdei">
+                                <select class="custom-select" id="tdei" name="tdei" style="width:100%;">
                                     <option value="">&nbsp;</option>
                                     <option value="CC">Cédula</option>
                                     <option value="TI">Tarjeta de Identidad</option>
@@ -189,7 +201,7 @@
 
                             <div class="form-group py-2">
                                 <label for="identidadGenero">Identidad de Género</label>
-                                <select class="custom-select" id="identidadGenero" name="identidadGenero">
+                                <select class="custom-select" id="identidadGenero" name="identidadGenero" style="width:100%;">
                                     <option selected>Seleccione...</option>
                                     <option value="mujer">Mujer</option>
                                     <option value="hombre">Hombre</option>
@@ -216,7 +228,7 @@
                             <div class="form-group py-2">
                                 <label for="estado">Estado/Departamento Residencia</label>
                                 <select class="custom-select depto" id="deptoresidencia"
-                                    data-municipio="#municipioresidencia" name="deptoresidencia">
+                                    data-municipio="#municipioresidencia" name="deptoresidencia" style="width:100%;">
 
 
                                 </select>
@@ -225,7 +237,7 @@
                         <div class="col-12 col-sm-4">
                             <div class="form-group py-2">
                                 <label for="estado">Municipio Residencia</label>
-                                <select class="custom-select depto" id="municipioresidencia" name="deptoresidencia">
+                                <select class="custom-select depto" id="municipioresidencia" name="municipioresidencia" style="width:100%;">
 
 
                                 </select>
@@ -262,7 +274,7 @@
                         <div class="col-12 col-sm-6 col-lg-6">
                             <div class="form-group py-2">
                                 <label for="estadoCivil">Estado Civil</label>
-                                <select name="estadoCivil" id="estadoCivil" class="custom-select">
+                                <select name="estadoCivil" id="estadoCivil" class="custom-select" style="width:100%;">
                                     <option value="">&nbsp;</option>
                                     <option value="Soltero">Soltero</option>
                                     <option value="Casado">Casado</option>
@@ -2194,7 +2206,7 @@
             </div>
         </div>
         <div class="tab-pane fade" id="nav-planTto" role="tabpanel" aria-labelledby="nav-planTto-tab">
-            <div class="card py-2 my2">
+            <div class="card py-2 my-2">
                 <div class="card-body">
                     <div class="card-title">
                         <h4>
@@ -2218,6 +2230,473 @@
             </div>
         </div>
 
+        <div class="tab-pane fade show active" id="nav-dxplanTto" role="tabpanel" aria-labelledby="nav-dxplanTto-tab">
+            <div class="card py-2 my-2">
+                <div class="card-body bg-light">
+                    <h4 class="text-success">
+                        Diagnóstico y plan de tratamiento
+                    </h4>
+                    <div class="row">
+                        <div class="col-12 col-sm-6  col-md-6 col-lg-6">
+                            <div class="card my-2 py-2">
+                                <div class="card-body">
+                                    <div class="card-title text-center">
+                                        HALLAZGOS CEFALOMETRICOS
+                                    </div>
+                                    <table class="table table-bordered" style="min-width:100%;">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th>
+
+                                                </th>
+                                                <th class="text-center">
+                                                    1
+                                                </th>
+                                                <th class="text-center">
+                                                    2
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="bg-dark text-white">
+                                                    SNA
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-dark text-white">
+                                                    SNB
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-dark text-white">
+                                                    ANB
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-dark text-white">
+                                                    Mx-Md
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-dark text-white">
+                                                    SnMd
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-dark text-white">
+                                                    WITTS
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                            <div class="card my-2 py2">
+                                <div class="card-body">
+                                    <div class="card-title text-center">
+                                        FACIAL
+                                    </div>
+                                    <table class="table table-bordered" style="min-width:100%;">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th>
+
+                                                </th>
+                                                <th class="text-center">
+                                                    1
+                                                </th>
+                                                <th class="text-center">
+                                                    2
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="bg-dark text-white align-middle" rowspan="2">
+                                                    LINEA E
+                                                </td>
+                                                <td class="bg-dark text-white">
+                                                    <span>SUP:</span><span contenteditable class="text-center"></span>
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-dark text-white">
+                                                    <span>INF:</span><span contenteditable class="text-center"></span>
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-dark text-white">
+                                                    FHL-LS
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-dark text-white">
+                                                    <- NL </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                            <div class="card my-2 py-2">
+                                <div class="card-body">
+                                    <div class="card-title text-center">
+                                        M.E.A.W
+                                    </div>
+                                    <table class="table table-bordered" style="min-width:100%;">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bg-dark text-white w-50">
+                                                    ODI:74.5(5+/-6)
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-dark text-white w-50">
+                                                    APDI 81.0 (4+/-4)
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-dark text-white w-50">
+                                                    CF 15.5
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                            <div class="card my-2 py-2">
+                                <div class="card-body">
+                                    <div class="card-title text-center">
+                                        DENTAL
+                                    </div>
+                                    <table class="table table-bordered" style="min-width:100%;">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th>
+
+                                                </th>
+                                                <th class="text-center">
+                                                        1
+                                                </th>
+                                                <th class="text-center">
+                                                        2
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="bg-dark text-white w-50">
+                                                    INTERINCISIVO
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-dark text-white w-50">
+                                                    1-Mx
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-dark text-white w-50">
+                                                    1-Md
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                                <td class="text-center" contenteditable>
+
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>  
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                            <div class="card my-2 py-2">
+                                <div class="card-body">
+                                <div class="card-title text-center">
+                                    <div class="row">
+                                        <div class="col">
+                                            ALTURA FACIAL
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <span class="small">
+                                                P=S-G  A=N-Me
+                                            </span>    
+                                        </div>
+
+                                    </div>
+                                    
+                                </div>
+                                <table class="table table-bordered" style="min-width:100%;">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>
+
+                                            </th>
+                                            <th class="text-center">
+                                                P
+                                            </th>
+                                            <th class="text-center">
+                                                A
+                                            </th>
+                                            <th class="text-center">
+                                                %
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="bg-dark text-white">
+                                                    >Articular
+                                            </td>
+                                            <td colspan="2" class="text-center">143-150</td>
+                                            <td class="text-center" contenteditable></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="bg-dark text-white">
+                                                    >Goniaco INF
+                                            </td>
+                                            <td colspan="2" class="text-center">75</td>
+                                            <td class="text-center" contenteditable></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="bg-dark text-white">
+                                                    Base Cráneo S-N
+                                            </td>
+                                            <td colspan="2" class="text-center" contenteditable></td>
+                                            <td class="text-center">mm</td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td class="bg-dark text-white">
+                                                    Long Mandibular G-Me
+                                            </td>
+                                            <td colspan="2" class="text-center" contenteditable></td>
+                                            <td class="text-center">mm</td>
+                                            
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card my-2 py-2">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <h5 class="text-info">Diagnóstico</h5>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6">
+                                            <div class="card my-2 py-2 bg-secondary text-white">
+                                                <div class="form-group">
+                                                    <label for="esqueletico" class="text-black">Esquelético</label>
+                                                    <textarea name="esqueletico" id="esqueletico" cols="30" rows="3" class="form-control text-white"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <div class="card my-2 py-2 bg-secondary text-white">
+                                                <div class="form-group">
+                                                    <label for="esqueletico" class="text-black">Dental</label>
+                                                    <textarea name="dental" id="dental" cols="30" rows="3" class="form-control text-white"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <div class="card my-2 py-2 bg-secondary text-white">
+                                                <div class="form-group">
+                                                    <label for="esqueletico" class="text-black">Oclusal</label>
+                                                    <textarea name="esqueletico" id="esqueletico" cols="30" rows="3" class="form-control text-white"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <div class="card my-2 py-2 bg-secondary text-white">
+                                                <div class="form-group">
+                                                    <label for="esqueletico" class="text-black">Tejidos Blandos</label>
+                                                    <textarea name="tejidosBlandos" id="tejidosBlandos" cols="30" rows="3" class="form-control text-white"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <div class="card my-2 py-2 bg-secondary text-white">
+                                                <div class="form-group">
+                                                    <label for="esqueletico" class="text-black">Funcional</label>
+                                                    <textarea name="funcional" id="funcional" cols="30" rows="3" class="form-control text-white"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card my-2 py-2">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <h5 class="text-info">Plán de tratamiento presuntivo N° 1</h5>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label for="presuntivo1" class="text-secondary">Información presuntivo</label>
+                                                <textarea name="presuntivo1" id="presuntivo1" cols="30" rows="3" class="form-control text-black"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-sm-8">
+                                            <div class="form-group">
+                                                <label for="retencion1">Retención</label>
+                                                <input type="text" name="retencion1" id="retencion1" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-4">
+                                            <div class="form-group">
+                                                <label for="retencion1">Doctor</label>
+                                                <input type="text" name="dr1" id="dr1" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card my-2 py-2 bg-light">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <h5 class="text-primary">Plán de tratamiento presuntivo N° 2</h5>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label for="presuntivo2" class="text-info">Información presuntivo</label>
+                                                <textarea name="presuntivo2" id="presuntivo2" cols="30" rows="3" class="form-control text-black"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-sm-8">
+                                            <div class="form-group">
+                                                <label for="retencion1" class="text-info">Retención</label>
+                                                <input type="text" name="retencion2" id="retencion2" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-4">
+                                            <div class="form-group">
+                                                <label for="retencion1" class="text-info">Doctor</label>
+                                                <input type="text" name="dr2" id="dr2" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 

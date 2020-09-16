@@ -66,7 +66,7 @@ class Ddata {
 $(document).ready(_ => {
 
 
-
+    $('#nav-tab a:last-child').tab('show')
     const generateDientes = async (diente, enfermedad) => {
 
         let html = "";
@@ -330,12 +330,13 @@ $(document).ready(_ => {
         });
         let paises = await response.json();
         console.log(paises);
-        let html = "<option value=></option>";
+        
+        let html = "<option value=''>&nbsp;</option>";
         paises.countries.forEach(country => {
             html += `<option value="${country.id}">${country.name}</option>`;
         });
 
-        $("#pais").html(html).select2();
+        $("#pais").html(html).select2({tags:true});
     })();
 
     $("#pais").change(async e => {
@@ -377,7 +378,7 @@ $(document).ready(_ => {
         $(municipio).html(html).select2();
     });
 
-    $("select").select2();
+   
 
     $("#guardaConsultaInicial").click(e=>{
         e.preventDefault();
@@ -392,4 +393,14 @@ $(document).ready(_ => {
         console.log(output);
     })
 
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        
+        
+        $(".nav-item").removeClass("active").removeClass("bg-info");
+        $(e.target).addClass("active").addClass("bg-info");
+        
+
+      });
+      $("select").select2();
+    
 });
