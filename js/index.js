@@ -403,4 +403,11 @@ $(document).ready(_ => {
       });
       $("select").select2();
     
+
+      $("#saveCi").click(e=>{
+          e.preventDefault();
+          let odontograma=JSON.stringify({ enfermedades: dientesSeleccionados });
+          let tejidosPeriodontales=$("#tejidosPeriodontales").html();
+          console.log(tejidosPeriodontales);
+      });
 });

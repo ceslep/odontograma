@@ -59,18 +59,42 @@
             color: darkcyan;
         }
 
-        #select2-selection__rendered{
+        #select2-selection__rendered {
             width: 100% !important;
         }
 
-        .text-black{
-            color:black;
+        .text-black {
+            color: black;
+        }
+
+        .float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #0C9;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1000;
+
+        }
+
+        .my-float {
+            margin-top: 22px;
+            z-index: 1000;
         }
     </style>
 </head>
 
 
 <body>
+
+    <a href="#" class="float" id="saveCi">
+        <i class="fa fa-save my-float"></i>
+    </a>
     <div class="container-fluid">
 
         <ul class="nav nav-tabs bg-primary nav-fill" id="nav-tab" role="tablist">
@@ -97,11 +121,12 @@
                 aria-controls="nav-pronostico" aria-selected="false"><span class="small">PRONOSTICO</span></a>
             <a class="nav-item nav-link" id="nav-planTto-tab" data-toggle="tab" href="#nav-planTto" role="tab"
                 aria-controls="nav-planTto" aria-selected="false"><span class="small">PLAN DE TRATAMIENTO</span></a>
-                <a class="nav-item nav-link" id="nav-dxplanTto-tab" data-toggle="tab" href="#nav-dxplanTto" role="tab"
+            <a class="nav-item nav-link" id="nav-dxplanTto-tab" data-toggle="tab" href="#nav-dxplanTto" role="tab"
                 aria-controls="nav-dxplanTto" aria-selected="false"><span class="small">DX Y PLAN TTO</span></a>
         </ul>
 
     </div>
+    <form id="frmCI">
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show" id="nav-identificacion" role="tabpanel"
             aria-labelledby="nav-identificacion-tab">
@@ -201,7 +226,8 @@
 
                             <div class="form-group py-2">
                                 <label for="identidadGenero">Identidad de Género</label>
-                                <select class="custom-select" id="identidadGenero" name="identidadGenero" style="width:100%;">
+                                <select class="custom-select" id="identidadGenero" name="identidadGenero"
+                                    style="width:100%;">
                                     <option selected>Seleccione...</option>
                                     <option value="mujer">Mujer</option>
                                     <option value="hombre">Hombre</option>
@@ -237,7 +263,8 @@
                         <div class="col-12 col-sm-4">
                             <div class="form-group py-2">
                                 <label for="estado">Municipio Residencia</label>
-                                <select class="custom-select depto" id="municipioresidencia" name="municipioresidencia" style="width:100%;">
+                                <select class="custom-select depto" id="municipioresidencia" name="municipioresidencia"
+                                    style="width:100%;">
 
 
                                 </select>
@@ -1062,7 +1089,7 @@
                                                 </th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="tejidosPeriodontales">
                                             <tr>
                                                 <td class="text-center">
                                                     V
@@ -2456,10 +2483,10 @@
 
                                                 </th>
                                                 <th class="text-center">
-                                                        1
+                                                    1
                                                 </th>
                                                 <th class="text-center">
-                                                        2
+                                                    2
                                                 </th>
                                             </tr>
                                         </thead>
@@ -2500,78 +2527,78 @@
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>  
+                            </div>
                         </div>
                         <div class="col-12 col-sm-6 col-md-6 col-lg-6">
                             <div class="card my-2 py-2">
                                 <div class="card-body">
-                                <div class="card-title text-center">
-                                    <div class="row">
-                                        <div class="col">
-                                            ALTURA FACIAL
+                                    <div class="card-title text-center">
+                                        <div class="row">
+                                            <div class="col">
+                                                ALTURA FACIAL
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <span class="small">
-                                                P=S-G  A=N-Me
-                                            </span>    
+                                        <div class="row">
+                                            <div class="col">
+                                                <span class="small">
+                                                    P=S-G A=N-Me
+                                                </span>
+                                            </div>
+
                                         </div>
 
                                     </div>
-                                    
-                                </div>
-                                <table class="table table-bordered" style="min-width:100%;">
-                                    <thead class="thead-dark">
-                                        <tr>
-                                            <th>
+                                    <table class="table table-bordered" style="min-width:100%;">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th>
 
-                                            </th>
-                                            <th class="text-center">
-                                                P
-                                            </th>
-                                            <th class="text-center">
-                                                A
-                                            </th>
-                                            <th class="text-center">
-                                                %
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="bg-dark text-white">
+                                                </th>
+                                                <th class="text-center">
+                                                    P
+                                                </th>
+                                                <th class="text-center">
+                                                    A
+                                                </th>
+                                                <th class="text-center">
+                                                    %
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="bg-dark text-white">
                                                     >Articular
-                                            </td>
-                                            <td colspan="2" class="text-center">143-150</td>
-                                            <td class="text-center" contenteditable></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="bg-dark text-white">
+                                                </td>
+                                                <td colspan="2" class="text-center">143-150</td>
+                                                <td class="text-center" contenteditable></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-dark text-white">
                                                     >Goniaco INF
-                                            </td>
-                                            <td colspan="2" class="text-center">75</td>
-                                            <td class="text-center" contenteditable></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="bg-dark text-white">
+                                                </td>
+                                                <td colspan="2" class="text-center">75</td>
+                                                <td class="text-center" contenteditable></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-dark text-white">
                                                     Base Cráneo S-N
-                                            </td>
-                                            <td colspan="2" class="text-center" contenteditable></td>
-                                            <td class="text-center">mm</td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td class="bg-dark text-white">
+                                                </td>
+                                                <td colspan="2" class="text-center" contenteditable></td>
+                                                <td class="text-center">mm</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-dark text-white">
                                                     Long Mandibular G-Me
-                                            </td>
-                                            <td colspan="2" class="text-center" contenteditable></td>
-                                            <td class="text-center">mm</td>
-                                            
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                                                </td>
+                                                <td colspan="2" class="text-center" contenteditable></td>
+                                                <td class="text-center">mm</td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -2587,7 +2614,8 @@
                                             <div class="card my-2 py-2 bg-secondary text-white">
                                                 <div class="form-group">
                                                     <label for="esqueletico" class="text-black">Esquelético</label>
-                                                    <textarea name="esqueletico" id="esqueletico" cols="30" rows="3" class="form-control text-white"></textarea>
+                                                    <textarea name="esqueletico" id="esqueletico" cols="30" rows="3"
+                                                        class="form-control text-white"></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -2595,7 +2623,8 @@
                                             <div class="card my-2 py-2 bg-secondary text-white">
                                                 <div class="form-group">
                                                     <label for="esqueletico" class="text-black">Dental</label>
-                                                    <textarea name="dental" id="dental" cols="30" rows="3" class="form-control text-white"></textarea>
+                                                    <textarea name="dental" id="dental" cols="30" rows="3"
+                                                        class="form-control text-white"></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -2603,7 +2632,8 @@
                                             <div class="card my-2 py-2 bg-secondary text-white">
                                                 <div class="form-group">
                                                     <label for="esqueletico" class="text-black">Oclusal</label>
-                                                    <textarea name="esqueletico" id="esqueletico" cols="30" rows="3" class="form-control text-white"></textarea>
+                                                    <textarea name="esqueletico" id="esqueletico" cols="30" rows="3"
+                                                        class="form-control text-white"></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -2611,7 +2641,8 @@
                                             <div class="card my-2 py-2 bg-secondary text-white">
                                                 <div class="form-group">
                                                     <label for="esqueletico" class="text-black">Tejidos Blandos</label>
-                                                    <textarea name="tejidosBlandos" id="tejidosBlandos" cols="30" rows="3" class="form-control text-white"></textarea>
+                                                    <textarea name="tejidosBlandos" id="tejidosBlandos" cols="30"
+                                                        rows="3" class="form-control text-white"></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -2619,7 +2650,8 @@
                                             <div class="card my-2 py-2 bg-secondary text-white">
                                                 <div class="form-group">
                                                     <label for="esqueletico" class="text-black">Funcional</label>
-                                                    <textarea name="funcional" id="funcional" cols="30" rows="3" class="form-control text-white"></textarea>
+                                                    <textarea name="funcional" id="funcional" cols="30" rows="3"
+                                                        class="form-control text-white"></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -2629,17 +2661,28 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-12 col-sm-6">
                             <div class="card my-2 py-2">
                                 <div class="card-body">
                                     <div class="card-title">
-                                        <h5 class="text-info">Plán de tratamiento presuntivo N° 1</h5>
+                                        <h5 class="text-info">Plán de tratamiento presuntivo N° 1
+                                        <span class="float-right">
+                                            <div class="radio">
+                                                <label>
+                                                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                                  &nbsp;
+                                                </label>
+                                              </div>
+                                        </span>
+                                        </h5>
                                     </div>
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label for="presuntivo1" class="text-secondary">Información presuntivo</label>
-                                                <textarea name="presuntivo1" id="presuntivo1" cols="30" rows="3" class="form-control text-black"></textarea>
+                                                <label for="presuntivo1" class="text-secondary">Información
+                                                    presuntivo</label>
+                                                <textarea name="presuntivo1" id="presuntivo1" cols="30" rows="3"
+                                                    class="form-control text-black"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -2647,7 +2690,8 @@
                                         <div class="col-12 col-sm-8">
                                             <div class="form-group">
                                                 <label for="retencion1">Retención</label>
-                                                <input type="text" name="retencion1" id="retencion1" class="form-control">
+                                                <input type="text" name="retencion1" id="retencion1"
+                                                    class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-12 col-sm-4">
@@ -2660,9 +2704,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
+
+                        <div class="col-12 col-sm-6">
                             <div class="card my-2 py-2 bg-light">
                                 <div class="card-body">
                                     <div class="card-title">
@@ -2671,8 +2714,10 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label for="presuntivo2" class="text-info">Información presuntivo</label>
-                                                <textarea name="presuntivo2" id="presuntivo2" cols="30" rows="3" class="form-control text-black"></textarea>
+                                                <label for="presuntivo2" class="text-info">Información
+                                                    presuntivo</label>
+                                                <textarea name="presuntivo2" id="presuntivo2" cols="30" rows="3"
+                                                    class="form-control text-black"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -2680,7 +2725,8 @@
                                         <div class="col-12 col-sm-8">
                                             <div class="form-group">
                                                 <label for="retencion1" class="text-info">Retención</label>
-                                                <input type="text" name="retencion2" id="retencion2" class="form-control">
+                                                <input type="text" name="retencion2" id="retencion2"
+                                                    class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-12 col-sm-4">
@@ -2694,11 +2740,163 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-6">
+                            <div class="card py-2 my-2">
+                                <div class="card-body">
+                                    <table class="table table-bordered" style="min-width:100%;">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bg-dark text-white">
+                                                    <span class="small">
+                                                        PLAN PREVENTIVO
+                                                    </span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span>Cita cada </span><span
+                                                        contenteditable>&nbsp;&nbsp;&nbsp;</span>
+                                                    <span> meses x </span><span
+                                                        contenteditable>&nbsp;&nbsp;&nbsp;</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-dark text-white">
+                                                    <span class="small">
+                                                        EXT. SERIADA
+                                                    </span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span>Cita cada </span><span
+                                                        contenteditable>&nbsp;&nbsp;&nbsp;</span>
+                                                    <span> meses x </span><span
+                                                        contenteditable>&nbsp;&nbsp;&nbsp;</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-dark text-white">
+                                                    <span class="small">
+                                                        ORTOPEDIA
+                                                    </span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span>Cita cada </span><span
+                                                        contenteditable>&nbsp;&nbsp;&nbsp;</span>
+                                                    <span> meses x </span><span
+                                                        contenteditable>&nbsp;&nbsp;&nbsp;</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-dark text-white">
+                                                    <span class="small">
+                                                        EXPANSION+ORTOPEDIA
+                                                    </span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <span>Cita cada </span><span
+                                                                contenteditable>&nbsp;&nbsp;&nbsp;</span>
+                                                            <span> meses x </span><span
+                                                                contenteditable>&nbsp;&nbsp;&nbsp;</span>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <span>Cita cada </span><span
+                                                                contenteditable>&nbsp;&nbsp;&nbsp;</span>
+                                                            <span> meses x </span><span
+                                                                contenteditable>&nbsp;&nbsp;&nbsp;</span>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="card py-2 my-2">
+                                <div class="card-body">
+                                    <table class="table table-bordered" style="min-width:100%;">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bg-dark text-white">
+                                                    <span class="small">
+                                                        EXPANSION+ORTOPEDIA
+                                                    </span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <span>Cita cada </span><span
+                                                                contenteditable>&nbsp;&nbsp;&nbsp;</span>
+                                                            <span> meses x </span><span
+                                                                contenteditable>&nbsp;&nbsp;&nbsp;</span>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <span>Cita cada </span><span
+                                                                contenteditable>&nbsp;&nbsp;&nbsp;</span>
+                                                            <span> meses x </span><span
+                                                                contenteditable>&nbsp;&nbsp;&nbsp;</span>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-dark text-white">
+                                                    <span class="small">
+                                                        ORTODONCIA FIJA
+                                                    </span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span>Cita cada </span><span
+                                                        contenteditable>&nbsp;&nbsp;&nbsp;</span>
+                                                    <span> meses x </span><span
+                                                        contenteditable>&nbsp;&nbsp;&nbsp;</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-dark text-white">
+                                                    <span class="small">
+                                                        ORTODONCIA Y CIRUGIA
+                                                    </span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span>Cita cada </span><span
+                                                        contenteditable>&nbsp;&nbsp;&nbsp;</span>
+                                                    <span> meses x </span><span
+                                                        contenteditable>&nbsp;&nbsp;&nbsp;</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-dark text-white">
+                                                    <span class="small">
+                                                        OTRO
+                                                    </span>
+                                                </td>
+                                                <td class="text-center">
+
+                                                    <span>Cita cada </span><span
+                                                        contenteditable>&nbsp;&nbsp;&nbsp;</span>
+                                                    <span> meses x </span><span
+                                                        contenteditable>&nbsp;&nbsp;&nbsp;</span>
+
+
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
+    </form>
 
 
 
