@@ -380,9 +380,11 @@ $(document).ready(_ => {
 
    
 
-    $("#guardaConsultaInicial").click(e=>{
+    $("#saveCi").click(e=>{
         e.preventDefault();
-        let obj=$("#frmConsultaInicial").serializeObject();
+        let dientesOdontograma = JSON.stringify({ enfermedades: dientesSeleccionados });
+        
+        let obj=$("#frmCI").serializeObject();
         console.log(obj);
         let output="create table consultaInicial ("
         output+="`ind` bigint(20) ,"
@@ -404,10 +406,5 @@ $(document).ready(_ => {
       $("select").select2();
     
 
-      $("#saveCi").click(e=>{
-          e.preventDefault();
-          let odontograma=JSON.stringify({ enfermedades: dientesSeleccionados });
-          let tejidosPeriodontales=$("#tejidosPeriodontales").html();
-          console.log(tejidosPeriodontales);
-      });
+      
 });
